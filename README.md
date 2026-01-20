@@ -1,10 +1,10 @@
-# 📊 Reynaldi - Data Analyst Portfolio
+# Reynaldi.my.id - Data Analyst Portfolio
 
 > *Transforming Raw Data into Actionable Business Insights*
 
 Welcome to my personal portfolio website! I'm a dedicated Data Analyst passionate about leveraging data-driven solutions to solve complex business problems. This repository showcases my skills, certifications, and projects in the field of data analytics and business intelligence.
 
-![Uploading image.png…]()
+<img width="1919" height="1047" alt="image" src="https://github.com/user-attachments/assets/501c8c6a-88aa-4531-8792-2344c2aabafd" />
 
 
 ---
