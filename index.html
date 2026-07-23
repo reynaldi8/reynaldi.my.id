@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reyn - Data Analyst</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="languages.js"></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-brand"><i class="fas fa-code"></i> My <span class="brand-dot"> Portfolio</span></div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link active"><i class="fas fa-home"></i>Home</a></li>
+                <li><a href="#about" class="nav-link"><i class="fas fa-briefcase"></i>About</a></li>
+                <li><a href="#portfolio" class="nav-link"><i class="fas fa-code"></i>Portfolio</a></li>
+                <li><a href="#testimonials" class="nav-link"><i class="fas fa-comments"></i>Testimonials</a></li>
+                <li><a href="#contact" class="nav-link"><i class="fas fa-envelope"></i>Contact</a></li>
+            </ul>
+
+            <!-- Icon pill controls -->
+            <div class="nav-controls" aria-hidden="false">
+                <div class="nav-cta">
+                    <a href="#contact" class="cta-btn">Let's Talk</a>
+                </div>
+            
+                <div class="icon-pills" role="group" aria-label="Language and theme">
+                    <!-- single language pill (toggles between US / ID) -->
+                    <a href="#" class="icon-pill lang-pill" role="button" data-lang="en" aria-label="Switch language">US</a>
+                    <!-- light theme toggle -->
+                    <button class="icon-pill theme-toggle" id="themeToggle" role="button" aria-label="Switch theme" aria-checked="false">
+                        <svg class="theme-icon theme-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+                        </svg>
+                        <svg class="theme-icon theme-moon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="display:none;">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                        </svg>
+                    </button>
+
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="section home">
+            <div class="container">
+                <div class="home-content">
+                    <div class="home-text">
+                        <a href="#contact" class="open-to-work-badge contact-link">
+                            <span class="badge-dot"></span>
+                            <span>Open to Work 2026</span>
+                        </a>
+                        <div class="greeting">Hi, I'm <span class="accent">Reynaldi</span> 👋</div>
+                        <h2 class="hero-subtitle" id="rotating-profession">Business Development Associate</h2>
+                        <p class="hero-desc">Transforming data into valuable insights for better business decisions. Interested in data-driven business and business development.</p>
+                        
+                        <div class="social-section">
+                            <span class="social-label">Follow me on:</span>
+                            <div class="social-links">
+                                <a href="https://github.com/reynaldi8" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="social-icon github">
+                                    <img src="./public/Icon/Github.png" alt="GitHub" class="social-icon-img">
+                                </a>
+                                <a href="https://www.linkedin.com/in/reynaldii" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="social-icon linkedin">
+                                    <img src="./public/Icon/linkedin.png" alt="LinkedIn" class="tableau-logo">
+                                </a>
+                                <a href="https://public.tableau.com/app/profile/reynaldi8" target="_blank" rel="noopener noreferrer" aria-label="Tableau Public" class="social-icon tableau">
+                                    <img src="./public/Icon/tableau.png" alt="Tableau Public" class="tableau-logo">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="hero-actions">
+                            <!-- Updated icons for actions -->
+                            <a href="#portfolio" class="hire-btn primary explore-projects">
+                                <i class="fas fa-folder-open"></i>
+                                <span>Explore My Project</span>
+                            </a>
+                            <button class="hire-btn secondary download-cv">
+                                <i class="fas fa-envelope"></i>
+                                <span>Download CV</span>
+                            </button>
+                        </div>
+
+                        <div class="hero-stats">
+                            <span class="stats-label">Quick Stats:</span>
+                            <a href="#portfolio" class="stat-pill" data-target-tab="projects">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M4 7h5l2 2h9a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1z"></path>
+                                    <path d="M4 11h16"></path>
+                                </svg>
+                                <span>3+ Projects</span>
+                            </a>
+                            <a href="#portfolio" class="stat-pill" data-target-tab="tech-stack">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M9 18h6"></path>
+                                    <path d="M10 20h4"></path>
+                                    <path d="M8 8a4 4 0 1 1 8 0c0 2.5-2 4.5-2 6h-4c0-1.5-2-3.5-2-6z"></path>
+                                    <path d="M12 7.5v1.5"></path>
+                                    <path d="M10 10h4"></path>
+                                    <path d="M12 12.5v1.5"></path>
+                                    <path d="M9.5 9.5l1 1"></path>
+                                    <path d="M14.5 9.5l-1 1"></path>
+                                </svg>
+                                <span>6+ Tools</span>
+                            </a>
+                            <a href="#portfolio" class="stat-pill" data-target-tab="certificates">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 4h14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"></path>
+                                    <path d="M8 9h8"></path>
+                                    <path d="M8 13h6"></path>
+                                    <path d="M12 17l-2 3 4-2-2-1z"></path>
+                                </svg>
+                                <span>18+ Certifications</span>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="home-image">
+                        <div class="image-container">
+                            <img src="public/Graduate3.jpeg" alt="Profile photo of Reyn" class="profile-image">
+                            <div class="floating-card card-1">
+                                <img src="./public/Icon/PostgreSQL.png" alt="PostgreSQL" class="floating-icon">
+                                <span></span>
+                            </div>
+                            <div class="floating-card card-2">
+                                <img src="./public/Icon/tableau.png" alt="Tableau" class="floating-icon">
+                                <span></span>
+                            </div>
+                            <div class="floating-card card-3">
+                                <img src="./public/Icon/power-bi.jpg" alt="Power BI" class="floating-icon">
+                                <span></span>
+                            </div>
+                            <div class="floating-card card-4">
+                                <img src="./public/Icon/Excel.png" alt="Excel" class="floating-icon">
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section about" aria-label="About Me">
+            <div class="container">
+                <div class="about-header">
+                    <h2 class="about-title" data-i18n="about-title">About Me</h2>
+                    <p class="about-subtitle" data-i18n="about-subtitle">Discover my journey, expertise, and the passion that drives my work in data.</p>
+                </div>
+
+                <div class="about-grid">
+                    <!-- Row 1: Who Am I, Stats, Current Focus -->
+                    
+                    <!-- Who Am I Card -->
+                    <div class="about-card who-am-i" id="whoAmICard" aria-label="Click to view graduate photo">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <div class="photo-hint">Click to view photo</div>
+                                <div class="card-icon">
+                                    <i class="fas fa-user-circle"></i>
+                                </div>
+                                <div class="card-content">
+                                    <h3 data-i18n="who-am-i">Who Am I?</h3>
+                                    <p data-i18n="who-am-i-desc"><span class="highlight-primary">Fresh graduate turned data analyst</span>. While studying <span class="highlight-accent">Business Management in President University</span>, I discovered something powerful: <span class="highlight-accent">data bridges business problems and smart solutions</span>.
+                                    I taught myself <span class="highlight-primary">SQL, Looker Studio, Power BI, Tableau, and Excel</span> because I knew this was my path. My business degree isn't a setback—it's my superpower. I speak both languages: <span class="highlight-accent">business strategy</span> and <span class="highlight-accent">technical insights</span>.
+                                    I understand how companies operate, which metrics drive decisions, and how to deliver analysis that actually matters. Ready to turn your data into <span class="highlight-primary">impact</span>.</p>
+                                </div>
+                            </div>
+                            <div class="flip-card-back" aria-hidden="true">
+                                <div class="who-am-i-photo"></div>
+                                <div class="photo-overlay">
+                                    <span class="photo-label">Graduate Photo</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Stats Wrapper - 2 separate cards stacked vertically -->
+                    <div class="stats-wrapper">
+                        <div class="stat-card clickable-stat" data-target-tab="tech-stack">
+                            <div class="stat-number">6+</div>
+                            <div class="stat-label" data-i18n="tools-mastered">TOOLS MASTERED</div>
+                        </div>
+                        <div class="stat-card clickable-stat" data-target-tab="projects">
+                            <div class="stat-number">4+</div>
+                            <div class="stat-label" data-i18n="portfolio-projects">PORTFOLIO PROJECTS</div>
+                        </div>
+                    </div>
+
+                    <!-- Current Focus Card -->
+                    <div class="about-card current-focus">
+                        <div class="focus-icon">
+                            <i class="fas fa-bullseye"></i>
+                        </div>
+                        <div class="focus-content">
+                            <h3 data-i18n="current-focus">Current Focus</h3>
+                            <p data-i18n="current-focus-desc">Building <span class="focus-highlight">Targeted Portfolio Projects</span> that analyze companies with <span class="highlight-accent">open data analyst roles</span>—identifying <span class="highlight-primary">real opportunities</span> and creating <span class="highlight-accent">relevant case studies</span>.</p>
+                            <div class="focus-badges">
+                                <span class="badge" data-i18n="company-analysis">Company Analysis</span>
+                                <span class="badge" data-i18n="real-world-data">Real-World Data</span>
+                                <span class="badge" data-i18n="strategic-insights">Strategic Insights</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Base Station Card -->
+                    <div class="about-card base-station">
+                        <div class="station-content">
+                            <h3 data-i18n="base-station">Base Station</h3>
+                            <p class="location" data-i18n="location">Jakarta, Indonesia (GMT+7)</p>
+                            <a href="#contact" class="availability contact-link">
+                                <span class="availability-dot"></span>
+                                <span class="availability-text" data-i18n="open-for-remote">Open for Remote Work</span>
+                            </a>
+                        </div>
+                        <div class="station-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                    </div>
+
+                    <!-- Skills Card - Compact -->
+                    <div class="about-card core-stack">
+                        <h3 data-i18n="Skills">Skills</h3>
+                        <div class="stack-list">
+                            <span class="stack-item">
+                                <span class="stack-item-label"><img src="./public/Icon/PostgreSQL.png" alt="Data Analyst" style="width: 1rem; height: 1rem; object-fit: contain;"> Data Analyst <span class="stack-level">90%</span></span>
+                                <span class="stack-progress"><span class="stack-progress-fill" style="width: 90%;"></span></span>
+                            </span>
+                            <span class="stack-item">
+                                <span class="stack-item-label"><img src="./public/Icon/tableau.png" alt="Tableau" style="width: 1rem; height: 1rem; object-fit: contain;"> Data Visualization <span class="stack-level">88%</span></span>
+                                <span class="stack-progress"><span class="stack-progress-fill" style="width: 88%;"></span></span>
+                            </span>
+                            <span class="stack-item">
+                                <span class="stack-item-label"><img src="./public/Icon/GoogleSlides.png" alt="Google Slides" style="width: 1rem; height: 1rem; object-fit: contain;"> Presentation & Design <span class="stack-level">85%</span></span>
+                                <span class="stack-progress"><span class="stack-progress-fill" style="width: 85%;"></span></span>
+                            </span>
+                            <span class="stack-item">
+                                <span class="stack-item-label"><img src="./public/Icon/Hubspot.png" alt="HubSpot" style="width: 1rem; height: 1rem; object-fit: contain;"> Business Development Tools <span class="stack-level">85%</span></span>
+                                <span class="stack-progress"><span class="stack-progress-fill" style="width: 85%;"></span></span>
+
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="portfolio" class="section portfolio">
+            <div class="container">
+                <h2 class="section-title">Portfolio Showcase</h2>
+                <p class="section-subtitle">Projects, Certificates, and My Tools — explore my work and credentials.</p>
+
+                <!-- Tab Navigation -->
+                <div class="portfolio-tabs">
+                    <button class="tab-btn active" data-tab="projects">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 7h5l2 2h9a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1z"></path>
+                            <path d="M4 11h16"></path>
+                        </svg>
+                        <span>Projects</span>
+                    </button>
+                    <button class="tab-btn" data-tab="certificates">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 4h14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"></path>
+                            <path d="M8 9h8"></path>
+                            <path d="M8 13h6"></path>
+                            <path d="M12 17l-2 3 4-2-2-1z"></path>
+                        </svg>
+                        <span>Certificates</span>
+                    </button>
+                    <button class="tab-btn" data-tab="tech-stack">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M9 18h6"></path>
+                            <path d="M10 20h4"></path>
+                            <path d="M8 8a4 4 0 1 1 8 0c0 2.5-2 4.5-2 6h-4c0-1.5-2-3.5-2-6z"></path>
+                            <path d="M12 7.5v1.5"></path>
+                            <path d="M10 10h4"></path>
+                            <path d="M12 12.5v1.5"></path>
+                            <path d="M9.5 9.5l1 1"></path>
+                            <path d="M14.5 9.5l-1 1"></path>
+                        </svg>
+                        <span>Tools</span>
+                    </button>
+                </div>
+
+                <!-- Projects Tab -->
+                <div class="tab-content projects-tab active" data-tab="projects">
+                    <div class="projects-grid">
+                        <div class="project-card">
+                            <div class="project-image">
+                                <img src="./public/It's Me.png" alt="Simpati+ Loyalty Program Analytics">
+                            </div>
+                            <div class="project-content">
+                                <h3 class="project-title">Simpati+ Loyalty Program Analytics</h3>
+                                <p class="project-description">Platform ini dirancang untuk menganalisis data dari program loyalitas Simpati+ dan memberikan wawasan yang berguna bagi pengelola program...</p>
+                                <div class="project-actions">
+                                    <a href="#" class="btn-demo">
+                                        <span>Live Demo</span>
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                            <polyline points="15 3 21 3 21 9"></polyline>
+                                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                                        </svg>
+                                    </a>
+                                    <a href="project-detail.html" class="btn-details">
+                                        <span>Details</span>
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <polyline points="9 18 15 12 9 6"></polyline>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-card">
+                            <div class="project-image">
+                                <img src="./public/It's Me.png" alt="Indigift Merchant Expansion Strategy">
+                            </div>
+                            <div class="project-content">
+                                <h3 class="project-title">Indigift Merchant Expansion Strategy</h3>
+                                <p class="project-description">Strategi ini dirancang untuk memperluas jangkauan merchant Indigift dan meningkatkan partisipasi pengguna dalam program loyalitas...</p>
+                                <div class="project-actions">
+                                    <a href="#" class="btn-demo">
+                                        <span>Live Demo</span>
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                            <polyline points="15 3 21 3 21 9"></polyline>
+                                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                                        </svg>
+                                    </a>
+                                    <a href="project-detail.html" class="btn-details">
+                                        <span>Details</span>
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <polyline points="9 18 15 12 9 6"></polyline>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <div class="project-image">
+                                <img src="./public/It's Me.png" alt="Simpati+ Data-Driven Business Strategy">
+                            </div>
+                            <div class="project-content">
+                                <h3 class="project-title">Simpati+ Data-Driven Business Strategy</h3>
+                                <p class="project-description">Dari analisis data transaksi ke rekomendasi bisnis konkret untuk meningkatkan transaksi program loyalitas sebesar 20%...</p>
+                                <div class="project-actions">
+                                    <a href="#" class="btn-demo">
+                                        <span>Live Demo</span>
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                            <polyline points="15 3 21 3 21 9"></polyline>
+                                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                                        </svg>
+                                    </a>
+                                    <a href="project-detail.html" class="btn-details">
+                                        <span>Details</span>
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <polyline points="9 18 15 12 9 6"></polyline>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="project-card hidden-card">
+                            <div class="project-image">
+                                <img src="./public/It's Me.png" alt="Portfolio Website">
+                            </div>
+                            <div class="project-content">
+                                <h3 class="project-title">Portfolio Website</h3>
+                                <p class="project-description">Modern, responsive portfolio dengan smooth interactions dan animations yang menarik untuk menampilkan karya...</p>
+                                <div class="project-actions">
+                                    <a href="#" class="btn-demo">
+                                        <span>Live Demo</span>
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                            <polyline points="15 3 21 3 21 9"></polyline>
+                                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                                        </svg>
+                                    </a>
+                                    <a href="project-detail.html" class="btn-details">
+                                        <span>Details</span>
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <polyline points="9 18 15 12 9 6"></polyline>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="project-card hidden-card">
+                            <div class="project-image">
+                                <img src="./public/It's Me.png" alt="Blog Platform">
+                            </div>
+                            <div class="project-content">
+                                <h3 class="project-title">Blog Platform</h3>
+                                <p class="project-description">Platform blog lengkap dengan CMS dan fitur-fitur SEO-friendly untuk memudahkan pembuatan dan pengelolaan konten...</p>
+                                <div class="project-actions">
+                                    <a href="#" class="btn-demo">
+                                        <span>Live Demo</span>
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                            <polyline points="15 3 21 3 21 9"></polyline>
+                                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                                        </svg>
+                                    </a>
+                                    <a href="project-detail.html" class="btn-details">
+                                        <span>Details</span>
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <polyline points="9 18 15 12 9 6"></polyline>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="project-card hidden-card">
+                            <div class="project-image">
+                                <img src="./public/about-profile.gif" alt="Social Media Dashboard">
+                            </div>
+                            <div class="project-content">
+                                <h3 class="project-title">Social Media Dashboard</h3>
+                                <p class="project-description">Dashboard komprehensif untuk analitik media sosial dan penjadwalan posting di berbagai platform...</p>
+                                <div class="project-actions">
+                                    <a href="#" class="btn-demo">
+                                        <span>Live Demo</span>
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                            <polyline points="15 3 21 3 21 9"></polyline>
+                                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                                        </svg>
+                                    </a>
+                                    <a href="project-detail.html" class="btn-details">
+                                        <span>Details</span>
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <polyline points="9 18 15 12 9 6"></polyline>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="see-more-wrapper">
+                        <button class="see-more-btn">
+                            <span>See More</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Certificates Tab -->
+                <div class="tab-content certificates-tab" data-tab="certificates">
+                    <div class="certificates-grid">
+                        <!-- Empty State - shown when no certificates loaded -->
+                        <div class="certificates-empty" id="certificatesEmpty">
+                            <div class="empty-icon">
+                                <i class="fas fa-certificate"></i>
+                            </div>
+                            <h4>Certificates Coming Soon</h4>
+                            <p>Premium certifications are being prepared to showcase my expertise and achievements.</p>
+                            <div class="skeleton-loaders">
+                                <div class="skeleton-item"></div>
+                                <div class="skeleton-item"></div>
+                                <div class="skeleton-item"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="certificate-card">
+                            <div class="certificate-frame">
+                                <img src="./public/Achievments/Advanced Business Analytics/certificate.jpg" alt="Advanced Business Analytics">
+                            </div>
+                        </div>
+                        <div class="certificate-card">
+                            <div class="certificate-frame">
+                                <img src="./public/Achievments/Google Data Analytics/certificate.jpg" alt="Google Data Analytics">
+                            </div>
+                        </div>
+                        <div class="certificate-card">
+                            <div class="certificate-frame">
+                                <img src="./public/Achievments/IBM/IBM Data Management/certificate.jpg" alt="IBM Data Management">
+                            </div>
+                        </div>
+                        <div class="certificate-card hidden-card">
+                            <div class="certificate-frame">
+                                <img src="./public/Achievments/Microsoft Azure Data Fundamentals DP-900 Exam Prep/certificate.jpg" alt="Microsoft Azure">
+                            </div>
+                        </div>
+                        <div class="certificate-card hidden-card">
+                            <div class="certificate-frame">
+                                <img src="./public/Achievments/Microsoft Data Visualization/certificate.jpg" alt="Microsoft Data Visualization">
+                            </div>
+                        </div>
+                        <div class="certificate-card hidden-card">
+                            <div class="certificate-frame">
+                                <img src="./public/Achievments/Microsoft Power BI Data Analyst/certificate.jpg" alt="Microsoft Power BI">
+                            </div>
+                        </div>
+                        <div class="certificate-card hidden-card">
+                            <div class="certificate-frame">
+                                <img src="./public/Achievments/Google Advanced Data Analytics/Dicoding-Microsoft-Fabric.jpg" alt="Dicoding Microsoft Fabric">
+                            </div>
+                        </div>
+                        <div class="certificate-card hidden-card">
+                            <div class="certificate-frame">
+                                <img src="./public/Achievments/Google Advanced Data Analytics/Inside-LVMH.jpg" alt="Inside LVMH">
+                            </div>
+                        </div>
+                        <div class="certificate-card hidden-card">
+                            <div class="certificate-frame">
+                                <img src="./public/Achievments/President English/President-English.jpg" alt="President English">
+                            </div>
+                        </div>
+                        <div class="certificate-card hidden-card">
+                            <div class="certificate-frame">
+                                <img src="./public/Achievments/Alteryx/Alteryx-Designer-Core.jpg" alt="Alteryx">
+                            </div>
+                        </div>
+                        <div class="certificate-card hidden-card">
+                            <div class="certificate-frame">
+                                <img src="./public/Achievments/DataAnalyticsEssentials/DataAnalyticsEssentials.jpg" alt="Alteryx">
+                            </div>
+                        </div>
+                        <div class="certificate-card hidden-card">
+                            <div class="certificate-frame">
+                                <img src="./public/Achievments/sql basic/sql-basic.jpg" alt="HackerRank">
+                            </div>
+                        </div>
+                        <div class="certificate-card hidden-card">
+                            <div class="certificate-frame">
+                                <img src="./public/Achievments/sql intermediate/sql-intermediate.jpg" alt="HackerRank">
+                            </div>
+                        </div>
+                        <div class="certificate-card hidden-card">
+                            <div class="certificate-frame">
+                                <img src="./public/Achievments/sql advanced/sql-advanced.jpg" alt="HackerRank">
+                            </div>
+                        </div>
+                        <div class="certificate-card hidden-card">
+                            <div class="certificate-frame">
+                                <img src="./public/Achievments/css basic/css-basic.jpg" alt="HackerRank">
+                            </div>
+                        </div>
+                        <div class="certificate-card hidden-card">
+                            <div class="certificate-frame">
+                                <img src="./public/Achievments/Google Advanced Data Analytics/Accelerate-Your-Job-Search-with-AI.jpg" alt="Accelerate Your Job Search with AI">
+                            </div>
+                        </div>
+                        <div class="certificate-card hidden-card">
+                            <div class="certificate-frame">
+                                <img src="./public/Achievments/Google Advanced Data Analytics/Foundations-of-Data-Science.jpg" alt="Foundations of Data Science">
+                            </div>
+                        </div>
+                        <div class="certificate-card hidden-card">
+                            <div class="certificate-frame">
+                                <img src="./public/Achievments/Google Advanced Data Analytics/Get-Started-with-Python.jpg" alt="Get Started with Python">
+                            </div>
+                        </div>
+                        <div class="certificate-card hidden-card">
+                            <div class="certificate-frame">
+                                <img src="./public/Achievments/Google Advanced Data Analytics/Go-Beyond-the-Numbers-Translate-Data-into-Insights.jpg" alt="Go Beyond the Numbers - Translate Data into Insights">
+                            </div>
+                        </div>
+                        <div class="certificate-card hidden-card">
+                            <div class="certificate-frame">
+                                <img src="./public/Achievments/Google Advanced Data Analytics/Google-Advanced-Data-Analytics-Capstone.jpg" alt="Google Advanced Data Analytics Capstone">
+                            </div>
+                        </div>
+                        <div class="certificate-card hidden-card">
+                            <div class="certificate-frame">
+                                <img src="./public/Achievments/Google Advanced Data Analytics/Google-Advanced-Data-Analytics.jpg" alt="Google Advanced Data Analytics">
+                            </div>
+                        </div>
+                        <div class="certificate-card hidden-card">
+                            <div class="certificate-frame">
+                                <img src="./public/Achievments/Google Advanced Data Analytics/Regression-Analysis-Simplify-Complex-Data.jpg" alt="Regression Analysis - Simplify Complex Data">
+                            </div>
+                        </div>
+                        <div class="certificate-card hidden-card">
+                            <div class="certificate-frame">
+                                <img src="./public/Achievments/Google Advanced Data Analytics/The-Nuts-and-Bolts-of-Machine-Learning.jpg" alt="The Nuts and Bolts of Machine Learning">
+                            </div>
+                        </div>
+                        <div class="certificate-card hidden-card">
+                            <div class="certificate-frame">
+                                <img src="./public/Achievments/Google Advanced Data Analytics/The-Power-of-Statistics.jpg" alt="The Power of Statistics">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="see-more-wrapper">
+                        <button class="see-more-btn">
+                            <span>See More</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Tools Tab -->
+                <div class="tab-content tech-stack-tab" data-tab="tech-stack">
+                    <div id="techStackGrid" class="tech-stack-grid">
+                        <div class="tech-card">
+                            <div class="tech-icon">
+                                <img src="./public/Icon/Excel.png" alt="Excel" style="width: 40px; height: 40px; object-fit: contain;">
+                            </div>
+                            <span class="tech-name">Excel</span>
+                            <span class="tech-level">85% proficiency</span>
+                            <div class="tech-progress"><div class="tech-progress-fill" style="width: 95%;"></div></div>
+                        </div>
+                        <div class="tech-card">
+                            <div class="tech-icon">
+                                <img src="./public/Icon/PostgreSQL.png" alt="SQL" style="width: 40px; height: 40px; object-fit: contain;">
+                            </div>
+                            <span class="tech-name">SQL</span>
+                            <span class="tech-level">80% proficiency</span>
+                            <div class="tech-progress"><div class="tech-progress-fill" style="width: 90%;"></div></div>
+                        </div>
+                        <div class="tech-card">
+                            <div class="tech-icon">
+                                <img src="./public/Icon/power-bi.jpg" alt="Power BI" style="width: 40px; height: 40px; object-fit: contain;">
+                            </div>
+                            <span class="tech-name">Power BI</span>
+                            <span class="tech-level">82% proficiency</span>
+                            <div class="tech-progress"><div class="tech-progress-fill" style="width: 88%;"></div></div>
+                        </div>
+                        <div class="tech-card">
+                            <div class="tech-icon">
+                                <img src="./public/Icon/tableau.png" alt="Tableau" style="width: 40px; height: 40px; object-fit: contain;">
+                            </div>
+                            <span class="tech-name">Tableau</span>
+                            <span class="tech-level">82% proficiency</span>
+                            <div class="tech-progress"><div class="tech-progress-fill" style="width: 85%;"></div></div>
+                        </div>
+                        <div class="tech-card">
+                            <div class="tech-icon">
+                                <img src="./public/Icon/Looker.png" alt="Looker Studio" style="width: 40px; height: 40px; object-fit: contain;">
+                            </div>
+                            <span class="tech-name">Looker Studio</span>
+                            <span class="tech-level">82% proficiency</span>
+                            <div class="tech-progress"><div class="tech-progress-fill" style="width: 82%;"></div></div>
+                        </div>
+                        <div class="tech-card">
+                            <div class="tech-icon">
+                                <img src="./public/Icon/ApolloAI.png" alt="Apollo AI" style="width: 40px; height: 40px; object-fit: contain;">
+                            </div>
+                            <span class="tech-name">Apollo AI</span>
+                            <span class="tech-level">80% proficiency</span>
+                            <div class="tech-progress"><div class="tech-progress-fill" style="width: 87%;"></div></div>
+                        </div>
+                        <div class="tech-card">
+                            <div class="tech-icon">
+                                <img src="./public/Icon/Salesforce.png" alt="Python" style="width: 40px; height: 40px; object-fit: contain;">
+                            </div>
+                            <span class="tech-name">Salesforce</span>
+                            <span class="tech-level">85% proficiency</span>
+                            <div class="tech-progress"><div class="tech-progress-fill" style="width: 92%;"></div></div>
+                        </div>
+                        <div class="tech-card">
+                            <div class="tech-icon">
+                                <img src="./public/Icon/Hubspot.png" alt="Hubspot" style="width: 40px; height: 40px; object-fit: contain;">
+                            </div>
+                            <span class="tech-name">Hubspot</span>
+                            <span class="tech-level">80% proficiency</span>
+                            <div class="tech-progress"><div class="tech-progress-fill" style="width: 80%;"></div></div>
+                        </div>
+                        <div class="tech-card">
+                            <div class="tech-icon">
+                                <img src="./public/Icon/Jira.png" alt="Jira" style="width: 40px; height: 40px; object-fit: contain;">
+                            </div>
+                            <span class="tech-name">Jira</span>
+                            <span class="tech-level">80% proficiency</span>
+                            <div class="tech-progress"><div class="tech-progress-fill" style="width: 78%;"></div></div>
+                        </div>
+                        <div class="tech-card">
+                            <div class="tech-icon">
+                                <img src="./public/Icon/Trello.png" alt="Trello" style="width: 40px; height: 40px; object-fit: contain;">
+                            </div>
+                            <span class="tech-name">Trello</span>
+                            <span class="tech-level">80% proficiency</span>
+                            <div class="tech-progress"><div class="tech-progress-fill" style="width: 75%;"></div></div>
+                        </div>
+                        <div class="tech-card">
+                            <div class="tech-icon">
+                                <img src="./public/Icon/Canva.png" alt="Canva" style="width: 40px; height: 40px; object-fit: contain;">
+                            </div>
+                            <span class="tech-name">Canva</span>
+                            <span class="tech-level">82% proficiency</span>
+                            <div class="tech-progress"><div class="tech-progress-fill" style="width: 78%;"></div></div>
+                        </div>
+                        <div class="tech-card">
+                            <div class="tech-icon">
+                                <img src="./public/Icon/GoogleSlides.png" alt="Google Slides" style="width: 40px; height: 40px; object-fit: contain;">
+                            </div>
+                            <span class="tech-name">Google Slides</span>
+                            <span class="tech-level">85% proficiency</span>
+                            <div class="tech-progress"><div class="tech-progress-fill" style="width: 89%;"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="section testimonials" aria-label="Testimonials">
+            <div class="container">
+                <h2 class="section-title">What People Say</h2>
+                <p class="section-subtitle">Feedback from my team, collaborators, and friends who have experienced my work.</p>
+                
+                <div class="testimonials-container">
+                    <div class="testimonials-header">
+                        <h3 class="testimonials-title">
+                            <i class="fas fa-comments"></i>
+                            Testimonials
+                        </h3>
+                        <button class="add-testimonial-btn" aria-label="Add new testimonial">
+                            <i class="fas fa-plus"></i>
+                            Add Testimonial
+                        </button>
+                    </div>
+
+                    <div class="testimonials-content">
+                        <div class="testimonials-empty">
+                            <div class="empty-icon">
+                                <i class="fas fa-comment-slash"></i>
+                            </div>
+                            <h4>No Testimonials Yet</h4>
+                            <p>Be the first to share your experience and inspire others with your story!</p>
+                        </div>
+
+                        <div class="testimonials-list" role="list" style="display: none;">
+                            <!-- Testimonials will be dynamically added here -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Add Testimonial Modal -->
+                <div class="modal" id="testimonialModal" aria-labelledby="modalTitle" hidden>
+                    <div class="modal-content testimonial-modal">
+                        <div class="modal-header">
+                            <h3 id="modalTitle">Add Your Testimonial</h3>
+                            <button class="modal-close" aria-label="Close modal">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+
+                        <form class="testimonial-form" id="testimonialForm" aria-label="Testimonial form">
+                            <div class="form-group" style="position: relative; margin-bottom: 1.5rem;">
+                                <input type="text" id="t-name" name="name" placeholder="Enter your name" required>
+                            </div>
+
+                            <div class="form-group" style="position: relative; margin-bottom: 1.5rem;">
+                                <input type="email" id="t-email" name="email" placeholder="your@email.com" required>
+                            </div>
+
+                            <div class="form-group" style="position: relative; margin-bottom: 1.5rem;">
+                                <input type="text" id="t-role" name="role" placeholder="e.g., Project Manager">
+                            </div>
+
+                            <div class="form-group" style="position: relative; margin-bottom: 1.5rem;">
+                                <textarea id="t-message" name="message" rows="5" placeholder="Share your experience working with me..." required></textarea>
+                            </div>
+
+                            <div class="form-group rating-group">
+                                <div class="rating-stars" id="ratingStars">
+                                    <button type="button" class="star" data-rating="1" aria-label="1 star">
+                                        <i class="fas fa-star"></i>
+                                    </button>
+                                    <button type="button" class="star" data-rating="2" aria-label="2 stars">
+                                        <i class="fas fa-star"></i>
+                                    </button>
+                                    <button type="button" class="star" data-rating="3" aria-label="3 stars">
+                                        <i class="fas fa-star"></i>
+                                    </button>
+                                    <button type="button" class="star" data-rating="4" aria-label="4 stars">
+                                        <i class="fas fa-star"></i>
+                                    </button>
+                                    <button type="button" class="star" data-rating="5" aria-label="5 stars">
+                                        <i class="fas fa-star"></i>
+                                    </button>
+                                </div>
+                                <input type="hidden" id="t-rating" name="rating" value="5">
+                            </div>
+                            <div class="form-actions">
+                                <button type="button" class="btn-secondary" id="cancelTestimonialBtn">Cancel</button>
+                                <button type="submit" class="btn-gradient">Submit Testimonial</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section (redesigned) -->
+        <section id="contact" class="section contact" aria-label="Contact">
+            <div class="container">
+                <h2 class="section-title">Contact Me</h2>
+                <p class="section-subtitle contact-subtitle">Have questions? Send me a message, and I'll get back to you soon.</p>
+
+                <div class="contact-grid">
+                    <!-- Left column: Contact form + Connect box -->
+                    <div class="contact-left">
+                        <div class="contact-card contact-message">
+                            <div class="contact-form-header">
+                                <h3 class="contact-form-title" data-i18n="get-in-touch">
+                                    <i class="fas fa-envelope"></i>
+                                    Get in Touch
+                                </h3>
+                                <button class="contact-form-action" aria-label="Expand form">
+                                    <i class="fas fa-arrow-right"></i>
+                                </button>
+                            </div>
+                            <p class="muted contact-form-desc" data-i18n="get-in-touch-desc">Want to discuss something? Send me a message and let's talk.</p>
+
+                            <form id="contactForm" class="contact-form card-form" aria-label="Contact form" data-formspree="https://formspree.io/f/mrenlepe" data-email="reynaldi.v8@gmail.com">
+                                <!-- Hidden fields to capture sender 24h local timestamp and timezone -->
+                                <input type="hidden" id="c-submitted-at-local-24h" name="submitted_at_local_24h" value="">
+                                <input type="hidden" id="c-timezone-offset" name="timezone_offset_minutes" value="">
+                                <input type="hidden" id="c-timezone-utc" name="timezone_utc_offset" value="">
+                                <input type="hidden" id="c-timezone-name" name="timezone_name" value="">
+                                <div class="form-group" style="position: relative; margin-bottom: 1.5rem;">
+                                    <input type="text" id="c-name" name="name" placeholder="Your Name" required>
+                                </div>
+                                <div class="form-group" style="position: relative; margin-bottom: 1.5rem;">
+                                    <input type="email" id="c-email" name="email" placeholder="Your Email" required>
+                                </div>
+                                <div class="form-group" style="position: relative; margin-bottom: 1.5rem;">
+                                    <textarea id="c-message" name="message" rows="6" placeholder="Your Message" required></textarea>
+                                    <small class="form-helper" data-i18n="form-privacy">*Your information is private and will not be shared.</small>
+                                </div>
+
+                                <button type="submit" class="btn-gradient" aria-label="Kirim Pesan">
+                                    <i class="fas fa-paper-plane"></i>
+                                    <span>Send Message</span>
+                                </button>
+                            </form>
+                        </div>
+
+                        <div class="contact-card connect-box">
+                            <h4 class="connect-title">Connect With Me</h4>
+                            <p class="muted connect-subtitle">Let's connect on social platforms</p>
+                            <div class="connect-grid">
+                                <a class="connect-item" href="https://www.linkedin.com/in/reynaldii" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                                    <i class="fab fa-linkedin-in"></i>
+                                    <div>
+                                        <div class="connect-item-title">Let's Connect</div>
+                                        <small class="connect-item-sub">on LinkedIn</small>
+                                    </div>
+                                </a>
+                                <a class="connect-item" href="https://www.instagram.com/aksarareyn" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                                    <i class="fab fa-instagram"></i>
+                                    <div>
+                                        <div class="connect-item-title">Instagram</div>
+                                        <small class="connect-item-sub">@aksarareyn</small>
+                                    </div>
+                                </a>
+                                <a class="connect-item" href="https://public.tableau.com/app/profile/reynaldi8" target="_blank" rel="noopener noreferrer" aria-label="Tableau Public">
+                                    <i class="fas fa-chart-bar"></i>
+                                    <div>
+                                        <div class="connect-item-title">Tableau</div>
+                                        <small class="connect-item-sub">Public Portfolio</small>
+                                    </div>
+                                </a>
+                                <a class="connect-item" href="https://github.com/reynaldi8" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                                    <i class="fab fa-github"></i>
+                                    <div>
+                                        <div class="connect-item-title">Github</div>
+                                        <small class="connect-item-sub">@reynaldi8</small>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right column: Comments panel -->
+                    <div class="contact-right">
+                        <div class="contact-card comments-panel">
+                            <div class="comments-header">
+                                <div class="comments-header-left">
+                                    <div class="comments-badge">💬</div>
+                                    <h3><span data-i18n="comments-header">Comments</span> <span class="comments-count">(3)</span></h3>
+                                </div>
+                                <div class="muted" data-i18n="comments-pinned-label">Pinned & recent comments</div>
+                            </div>
+
+                            <form class="comment-form" aria-label="Post comment">
+                                <div class="form-group" style="position: relative; margin-bottom: 1.5rem;">
+                                    <input type="text" id="cm-name" placeholder="Name *" required>
+                                </div>
+                                <div class="form-group" style="position: relative; margin-bottom: 1.5rem;">
+                                    <textarea id="cm-message" rows="4" placeholder="Message *" required></textarea>
+                                </div>
+
+                                <div class="file-upload">
+                                    <input type="file" id="cm-photo" accept="image/*" aria-label="Profile photo">
+                                    <div class="file-name">Max file size: 5MB</div>
+                                    <button type="button" class="choose-file-btn" data-i18n="choose-profile-photo">Choose Profile Photo</button>
+                                </div>
+
+                                <button type="button" class="btn-gradient post-btn">Post Comment</button>
+                            </form>
+
+                            <div class="comments-scroll-wrapper">
+                                <div class="comment-list custom-scrollbar" role="list">
+                                <div class="comment-item comment-pinned" role="listitem">
+                                    <div class="comment-avatar">R</div>
+                                    <div class="comment-body">
+                                        <h5>Reynaldi <small class="comment-role">Admin</small></h5>
+                                        <small class="muted">Pinned comment • Dec 20, 2025</small>
+                                        <p>Thanks for visiting! Contact me if you need anything.</p>
+                                    </div>
+                                </div>
+
+                                <div class="comment-item" role="listitem" data-timestamp="2026-02-28T12:00:00.000Z" data-hardcoded="true">
+                                    <div class="comment-avatar">明</div>
+                                    <div class="comment-body">
+                                        <h5>明</h5>
+                                        <small class="muted"><span class="time-ago">4 months ago</span></small>
+                                        <p>cool!</p>
+                                    </div>
+                                </div>
+
+                                    </div>
+                                </div>
+
+                                <!-- more comments can be added here -->
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+
+            <footer class="site-footer">
+                <div class="container">
+                    <p>© 2026 Reynaldi™. All Rights Reserved.</p>
+                </div>
+            </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Formspree Contact Form Integration
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            
+            fetch('https://formspree.io/f/meeeanlz', {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    alert('Message sent successfully! I will get back to you soon.');
+                    document.getElementById('contactForm').reset();
+                } else {
+                    alert('Failed to send message. Please try again.');
+                }
+            })
+            .catch(error => {
+                console.log('Error:', error);
+                alert('Failed to send message. Please try again.');
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
