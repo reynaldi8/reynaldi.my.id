@@ -85,9 +85,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
         updateThemeIcon(theme) {
             if (!this.themeToggle) return;
-            const icon = this.themeToggle.querySelector('i');
-            if (icon) {
-                icon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+            const sunIcon = this.themeToggle.querySelector('.theme-sun');
+            const moonIcon = this.themeToggle.querySelector('.theme-moon');
+            if (sunIcon && moonIcon) {
+                if (theme === 'light') {
+                    sunIcon.style.display = 'block';
+                    moonIcon.style.display = 'none';
+                } else {
+                    sunIcon.style.display = 'none';
+                    moonIcon.style.display = 'block';
+                }
             }
         }
 
@@ -102,7 +109,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize theme manager
     const themeManager = new ThemeManager();
 
-    // ==================== TECH STACK WITH SKILL RATINGS ====================
+    // ==================== Skills WITH SKILL RATINGS ====================
     const techSkills = [
         { name: 'SQL', icon: 'fas fa-database', level: 'Advanced', percentage: 90 },
         { name: 'Python', icon: 'fab fa-python', level: 'Advanced', percentage: 85 },
@@ -121,6 +128,8 @@ document.addEventListener('DOMContentLoaded', function() {
     function renderTechStack() {
         const techStackGrid = document.getElementById('techStackGrid');
         if (!techStackGrid) return;
+        // Keep manual static skill cards if they already exist.
+        if (techStackGrid.querySelector('.tech-card')) return;
 
         techStackGrid.innerHTML = techSkills.map(skill => `
             <div class="tech-card" title="${skill.name} - ${skill.level} (${skill.percentage}%)">
@@ -143,83 +152,37 @@ document.addEventListener('DOMContentLoaded', function() {
         `).join('');
     }
 
-        // ==================== CERTIFICATES DATA (49 Total) ====================
+        // ==================== CERTIFICATES DATA (20 Total) ====================
         const certificateData = [
             // ==================== Certificates ====================
+            // Data Analytics (5)
             { id: 1, name: 'Google Advanced Data Analytics', org: 'Google', date: '2024', path: 'public/Achievments/Google Advanced Data Analytics/Google-Advanced-Data-Analytics.jpg' },
             { id: 2, name: 'Microsoft Power BI Data Analyst', org: 'Microsoft', date: '2023', path: 'public/Achievments/Microsoft Data Visualization/Microsoft-Power-BI-Data-Analyst.jpg' },
             { id: 3, name: 'Microsoft SQL Server', org: 'Microsoft', date: '2022', path: 'public/Achievments/Microsoft SQL Server/Microsoft-SQL-Server.jpg' },
             { id: 4, name: 'Tableau Business Intelligence Analyst', org: 'Tableau', date: '2022', path: 'public/Achievments/Tableau Business Intelligence Analyst/Tableau-Business-Intelligence-Analyst.jpg' },
             { id: 5, name: 'Data Visualization Fundamentals', org: 'Microsoft', date: '2023', path: 'public/Achievments/Microsoft Data Visualization/Microsoft-Data-Visualization.jpg' },
-            // Google Advanced Data Analytics (9)
-            { id: 6, name: 'Accelerate Your Job Search with AI', org: 'Google', date: '2024', path: 'public/Achievments/Google Advanced Data Analytics/Accelerate-Your-Job-Search-with-AI.jpg' },
-            { id: 7, name: 'Foundations of Data Science', org: 'Google', date: '2024', path: 'public/Achievments/Google Advanced Data Analytics/Foundations-of-Data-Science.jpg' },
-            { id: 8, name: 'Get Started with Python', org: 'Google', date: '2024', path: 'public/Achievments/Google Advanced Data Analytics/Get-Started-with-Python.jpg' },
-            { id: 9, name: 'Go Beyond the Numbers', org: 'Google', date: '2024', path: 'public/Achievments/Google Advanced Data Analytics/Go-Beyond-the-Numbers-Translate-Data-into-Insights.jpg' },
-            { id: 1, name: 'Google Advanced Data Analytics Capstone', org: 'Google', date: '2024', path: 'public/Achievments/Google Advanced Data Analytics/Google-Advanced-Data-Analytics-Capstone.jpg' },
-            
-            { id: 11, name: 'Regression Analysis', org: 'Google', date: '2024', path: 'public/Achievments/Google Advanced Data Analytics/Regression-Analysis-Simplify-Complex-Data.jpg' },
-            { id: 12, name: 'The Nuts and Bolts of Machine Learning', org: 'Google', date: '2024', path: 'public/Achievments/Google Advanced Data Analytics/The-Nuts-and-Bolts-of-Machine-Learning.jpg' },
-            { id: 13, name: 'The Power of Statistics', org: 'Google', date: '2024', path: 'public/Achievments/Google Advanced Data Analytics/The-Power-of-Statistics.jpg' },
-            
-            // Advanced Business Analytics (1)
-            { id: 14, name: 'Introduction to Data Analytics for Business', org: 'Coursera', date: '2024', path: 'public/Achievments/Advanced Business Analytics/Introduction-to-Data-Analytics-for-Business.jpg' },
-            
-            // Exam Prep PL-300 (1)
-            { id: 15, name: 'Power BI Data Analytics and Data Preparation', org: 'Microsoft', date: '2024', path: 'public/Achievments/Exam Prep PL-300 Microsoft Power BI Data Analyst Associate/Power-BI-Data-Analytics-and-Data-Preparation.jpg' },
-            
-            // Google Data Analytics (1)
-            { id: 16, name: 'Foundations: Data, Data, Everywhere', org: 'Google', date: '2024', path: 'public/Achievments/Google Data Analytics/Foundations-Data-Data-Everywhere.jpg' },
-            
-            // IBM Data Management (3)
-            { id: 17, name: 'Practice Test for CompTIA Data+', org: 'IBM', date: '2023', path: 'public/Achievments/IBM/IBM Data Management/Practice-Test-for-CompTIA-Data.jpg' },
-            { id: 18, name: 'Excel Basics for Data Analysis', org: 'IBM', date: '2023', path: 'public/Achievments/IBM/Excel-Basics-for-Data-Analysis.jpg' },
-            { id: 19, name: 'Introduction to Data Analytics', org: 'IBM', date: '2023', path: 'public/Achievments/IBM/Introduction-to-Data-Analytics.jpg' },
-            
-            // Microsoft Azure DP-900 (1)
-            { id: 20, name: 'Explore Core Data Concepts in Microsoft Azure', org: 'Microsoft', date: '2023', path: 'public/Achievments/Microsoft Azure Data Fundamentals DP-900 Exam Prep/Explore-Core-Data-Concepts-in-Microsoft-Azure.jpg' },
-            
+            // Dicoding Microsoft Fabric (1)
+            { id: 6, name: 'Dicoding Microsoft Fabric', org: 'Dicoding', date: '2026', path: 'public/Achievments/Dicoding Microsoft Fabric/Dicoding-Microsoft-Fabric.jpg' },
+            { id: 7, name: 'Data Visualization Fundamentals', org: 'Microsoft', date: '2023', path: 'public/Achievments/Inside LVMH/Inside-LVMH.jpg' },
+            // President English (1)
+            { id: 8, name: 'President English', org: 'Microsoft', date: '2023', path: 'public/Achievments/President English/President-English.jpg' },
+            // Alteryx (1)
+            { id: 9, name: 'Alteryx', org: 'Aletryx', date: '2026', path: 'public/Achievments/Alteryx/Alteryx-Designer-Core.jpg' },
+            // HackerRank (5)
+            { id: 10, name: 'HackerRank', org: 'HackerRank', date: '2026', path: 'public/Achievments/DataAnalyticsEssentials/DataAnalyticsEssentials.jpg' },
+            { id: 11, name: 'HackerRank', org: 'HackerRank', date: '2026', path: 'public/Achievments/HackerRank/sql-basic.jpg' },
+            { id: 12, name: 'HackerRank', org: 'HackerRank', date: '2026', path: 'public/Achievments/HackerRank/sql-intermediate.jpg' },
+            { id: 13, name: 'HackerRank', org: 'HackerRank', date: '2026', path: 'public/Achievments/HackerRank/sql-advanced.jpg' },
+            { id: 14, name: 'HackerRank', org: 'HackerRank', date: '2026', path: 'public/Achievments/HackerRank/css-basic.jpg' },
+            // Business Analytics (1)
+            { id: 15, name: 'Introduction to Data Analytics for Business', org: 'Coursera', date: '2024', path: 'public/Achievments/Advanced Business Analytics/Introduction-to-Data-Analytics-for-Business.jpg' },
+            { id: 16, name: 'Excel Basics for Data Analysis', org: 'IBM', date: '2023', path: 'public/Achievments/IBM/Excel-Basics-for-Data-Analysis.jpg' },
             // Microsoft Business Analyst (2)
-            { id: 21, name: 'Business Analysis Fundamentals', org: 'Microsoft', date: '2022', path: 'public/Achievments/Microsoft Business Analyst/Business-Analysis-Fundamentals.jpg' },
-            { id: 22, name: 'Data for Business Analysts Using Microsoft Excel', org: 'Microsoft', date: '2022', path: 'public/Achievments/Microsoft Business Analyst/Data-for-Business-Analysts-Using-Microsoft-Excel.jpg' },
             
-            // Microsoft Data Visualization (6)
-            { id: 23, name: 'Data Modeling and Architecture', org: 'Microsoft', date: '2023', path: 'public/Achievments/Microsoft Data Visualization/ata-Modeling-and-Architecture.jpg' },
-            { id: 24, name: 'Building Powerful Reports and Dashboards in Power BI', org: 'Microsoft', date: '2023', path: 'public/Achievments/Microsoft Data Visualization/Building-Powerful-Reports-and-Dashboards-in-Power-BI.jpg' },
-            { id: 25, name: 'Data Preparation and Management', org: 'Microsoft', date: '2023', path: 'public/Achievments/Microsoft Data Visualization/Data-Preparation-and-Management.jpg' },
-            { id: 26, name: 'Data Visualization Fundamentals', org: 'Microsoft', date: '2023', path: 'public/Achievments/Microsoft Data Visualization/Data-Visualization-Fundamentals.jpg' },
-            { id: 27, name: 'Visualization for Data Analysis with Power BI', org: 'Microsoft', date: '2023', path: 'public/Achievments/Microsoft Data Visualization/Visualization-for-Data-Analysis-with-Power-BI.jpg' },
             
-            // Microsoft Power BI Data Analyst (9)
-            { id: 28, name: 'Creative Designing in Power BI', org: 'Microsoft', date: '2023', path: 'public/Achievments/Microsoft Power BI Data Analyst/Creative-Designing-in-Power-BI.jpg' },
-            { id: 29, name: 'Data Analysis and Visualization with Power BI', org: 'Microsoft', date: '2023', path: 'public/Achievments/Microsoft Power BI Data Analyst/Data-Analysis-and-Visualization-with-Power-BI.jpg' },
-            { id: 30, name: 'Data Modeling in Power BI', org: 'Microsoft', date: '2023', path: 'public/Achievments/Microsoft Power BI Data Analyst/Data-Modeling-in-Power-BI.jpg' },
-            { id: 31, name: 'Deploy and Maintain Power BI Assets and Capstone', org: 'Microsoft', date: '2023', path: 'public/Achievments/Microsoft Power BI Data Analyst/Deploy-and-Maintain-Power-BI-Assets-and-Capstone.jpg' },
-            { id: 32, name: 'Extract, Transform and Load Data in Power BI', org: 'Microsoft', date: '2023', path: 'public/Achievments/Microsoft Power BI Data Analyst/Extract-Transform-and-Load-Data-in-Power-BI.jpg' },
-            { id: 33, name: 'Harnessing the Power of Data with Power BI', org: 'Microsoft', date: '2023', path: 'public/Achievments/Microsoft Power BI Data Analyst/Harnessing-the-Power-of-Data-with-Power-BI.jpg' },
-            { id: 34, name: 'Microsoft PL-300 Exam Preparation and Practice', org: 'Microsoft', date: '2023', path: 'public/Achievments/Microsoft Power BI Data Analyst/Microsoft-PL-300-Exam-Preparation-and-Practice.jpg' },
-            { id: 35, name: 'Preparing Data for Analysis with Microsoft Excel', org: 'Microsoft', date: '2023', path: 'public/Achievments/Microsoft Power BI Data Analyst/Preparing-Data-for-Analysis-with-Microsoft-Excel_page-0001.jpg' },
-            
-            // Microsoft SQL Server (6)
-            { id: 36, name: 'Data Manipulation and Transactions in SQL Server', org: 'Microsoft', date: '2022', path: 'public/Achievments/Microsoft SQL Server/Data-Manipulation-and-Transactions-in-SQL-Server.jpg' },
-            { id: 37, name: 'Indexing, Performance Optimization & Functions', org: 'Microsoft', date: '2022', path: 'public/Achievments/Microsoft SQL Server/Indexing-Performance-Optimization-&-Functions.jpg' }, 
-            { id: 38, name: 'Relational Database Design and Advanced SQL', org: 'Microsoft', date: '2022', path: 'public/Achievments/Microsoft SQL Server/Relational-Database-Design-and-Advanced.jpg' },
-            { id: 39, name: 'Security, Maintenance & Integration with BI Tools', org: 'Microsoft', date: '2022', path: 'public/Achievments/Microsoft SQL Server/Security-Maintenance-&-Integration-with-BI-Tools.jpg' },
-            { id: 40, name: 'SQL Foundations', org: 'Microsoft', date: '2022', path: 'public/Achievments/Microsoft SQL Server/SQL-Foundations.jpg' },
-            
+            { id: 19, name: 'Data for Business Analysts Using Microsoft Excel', org: 'Microsoft', date: '2022', path: 'public/Achievments/Microsoft Business Analyst/Data-for-Business-Analysts-Using-Microsoft-Excel.jpg' },
             // PostgreSQL for Everybody (1)
-            { id: 41, name: 'Database Design and Basic SQL in PostgreSQL', org: 'Coursera', date: '2022', path: 'public/Achievments/PostgreSQL for Everybody/Database-Design-and-Basic-SQL-in-PostgreSQL.jpg' },
-            
-            // Tableau Business Intelligence Analyst (9)
-            { id: 42, name: 'Advanced Data Visualization with Tableau', org: 'Tableau', date: '2022', path: 'public/Achievments/Tableau Business Intelligence Analyst/Advanced-Data-Visualization-with-Tableau.jpg' },
-            { id: 43, name: 'Business Analysis Process', org: 'Tableau', date: '2022', path: 'public/Achievments/Tableau Business Intelligence Analyst/Business-Analysis-Process.jpg' },
-            { id: 44, name: 'Communicating Data Insights with Tableau', org: 'Tableau', date: '2022', path: 'public/Achievments/Tableau Business Intelligence Analyst/Communicating-Data-Insights-with-Tableau.jpg' },
-            { id: 45, name: 'Data Analysis with Tableau', org: 'Tableau', date: '2022', path: 'public/Achievments/Tableau Business Intelligence Analyst/Data-Analysis-with-Tableau.jpg' },
-            { id: 46, name: 'Data Ecosystem', org: 'Tableau', date: '2022', path: 'public/Achievments/Tableau Business Intelligence Analyst/Data-Ecosystem.jpg' },
-            { id: 47, name: 'Data Visualization with Tableau', org: 'Tableau', date: '2022', path: 'public/Achievments/Tableau Business Intelligence Analyst/Data-Visualization-with-Tableau.jpg' },
-            { id: 48, name: 'Introduction to Business Analytics', org: 'Tableau', date: '2022', path: 'public/Achievments/Tableau Business Intelligence Analyst/Introduction-to-Busines-Analytics.jpg' },
-            { id: 49, name: 'Introduction to Tableau', org: 'Tableau', date: '2022', path: 'public/Achievments/Tableau Business Intelligence Analyst/Introduction-to-Tableau.jpg' }
-            
+            { id: 20, name: 'Database Design and Basic SQL in PostgreSQL', org: 'Coursera', date: '2022', path: 'public/Achievments/PostgreSQL for Everybody/Database-Design-and-Basic-SQL-in-PostgreSQL.jpg' },
         ];
 
         let displayedCerts = 6;
@@ -336,7 +299,9 @@ function closeCertificateViewer() {
     }
 }
 
-        function loadCertificates() {
+function loadCertificates() {
+            // Certificates are rendered dynamically (grid.innerHTML gets replaced),
+            // so keep everything in JS.
             const grid = document.querySelector('.certificates-grid') || document.querySelector('[data-tab="certificates"] .portfolio-grid');
             const empty = document.getElementById('certificatesEmpty');
             const certificatesTab = document.querySelector('.certificates-tab');
@@ -435,17 +400,32 @@ function closeCertificateViewer() {
     const socialIcons = document.querySelectorAll('.social-icon');
 
     // Professions for typewriter effect
-    const professions = [
+    let professions = [
         'Data Analyst',
-        'Business Intelligence Analyst', 
-        'Data-Driven Insights',
-        'Data Enthusiast',
+        'Business Development Associate',
+        'Data-Driven Business',
     ];
+    let typewriterTimeout;
+
+    function getProfessionListForLanguage(lang) {
+        const professionList = translations?.[lang]?.professions;
+        if (Array.isArray(professionList) && professionList.length > 0) {
+            return professionList;
+        }
+        return ['Data Analyst', 'Business Development Associate', 'Data-Driven Business'];
+    }
 
     // Typewriter Effect for Profession Cycling
     function setupTypewriterEffect() {
         const subtitleElement = document.querySelector('.hero-subtitle');
         if (!subtitleElement) return;
+
+        if (typewriterTimeout) {
+            clearTimeout(typewriterTimeout);
+            typewriterTimeout = null;
+        }
+
+        professions = getProfessionListForLanguage(getCurrentLanguage());
 
         let currentProfessionIndex = 0;
         let currentCharIndex = 0;
@@ -466,9 +446,9 @@ function closeCertificateViewer() {
                 if (currentCharIndex === 0) {
                     isDeleting = false;
                     currentProfessionIndex = (currentProfessionIndex + 1) % professions.length;
-                    setTimeout(typeWriter, pauseBeforeNext);
+                    typewriterTimeout = setTimeout(typeWriter, pauseBeforeNext);
                 } else {
-                    setTimeout(typeWriter, deletingSpeed);
+                    typewriterTimeout = setTimeout(typeWriter, deletingSpeed);
                 }
             } else {
                 // Typing mode
@@ -478,9 +458,9 @@ function closeCertificateViewer() {
                 if (currentCharIndex === currentProfession.length) {
                     // Typed full profession, now pause and prepare to delete
                     isDeleting = true;
-                    setTimeout(typeWriter, pauseBeforeDelete);
+                    typewriterTimeout = setTimeout(typeWriter, pauseBeforeDelete);
                 } else {
-                    setTimeout(typeWriter, typingSpeed);
+                    typewriterTimeout = setTimeout(typeWriter, typingSpeed);
                 }
             }
         }
@@ -818,6 +798,7 @@ function closeCertificateViewer() {
             const currentLang = getCurrentLanguage();
             const newLang = currentLang === 'en' ? 'id' : 'en';
             switchLanguage(newLang);
+            setupTypewriterEffect();
         });
     }
 
@@ -852,6 +833,37 @@ function closeCertificateViewer() {
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
 
+            // Populate hidden timezone/timestamp fields so Formspree stores local time info
+            try {
+                const now = new Date();
+                const local24 = this.querySelector('#c-submitted-at-local-24h');
+                const tzOffsetInput = this.querySelector('#c-timezone-offset');
+                const tzUtc = this.querySelector('#c-timezone-utc');
+                const tzNameInput = this.querySelector('#c-timezone-name');
+
+                // 24-hour formatted local time (use en-GB to ensure 24h format)
+                try {
+                    if (local24) local24.value = now.toLocaleString('en-GB', { hour12: false });
+                } catch (e) {
+                    if (local24) local24.value = now.toLocaleString();
+                }
+
+                // timezone offset in minutes and UTC offset string (+07:00)
+                const offsetMinutes = now.getTimezoneOffset();
+                if (tzOffsetInput) tzOffsetInput.value = String(offsetMinutes);
+                const offsetHours = -Math.sign(offsetMinutes) * Math.floor(Math.abs(offsetMinutes) / 60);
+                const offsetMins = Math.abs(offsetMinutes) % 60;
+                const sign = offsetHours >= 0 ? '+' : '-';
+                const absHours = Math.abs(offsetHours).toString().padStart(2, '0');
+                const absMins = String(offsetMins).padStart(2, '0');
+                if (tzUtc) tzUtc.value = `${sign}${absHours}:${absMins}`;
+
+                // timezone name via Intl (may return region like Asia/Jakarta)
+                if (tzNameInput && Intl && Intl.DateTimeFormat) tzNameInput.value = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
+            } catch (err) {
+                // ignore
+            }
+
             // Get form data
             const formData = new FormData(this);
             const data = Object.fromEntries(formData);
@@ -862,13 +874,49 @@ function closeCertificateViewer() {
                 return;
             }
 
-            // Simulate form submission (replace with actual API call)
-            console.log('Form submitted:', data);
+            // If a Formspree endpoint is provided via data-formspree, POST there
+            const endpoint = this.dataset.formspree && this.dataset.formspree.trim();
+            const mailTo = this.dataset.email && this.dataset.email.trim();
 
-            // Show success message
+            if (endpoint) {
+                // send to Formspree
+                fetch(endpoint, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                }).then(async (res) => {
+                    if (res.ok) {
+                        showNotification('Thank you for your message! I will get back to you soon.', 'success');
+                        contactForm.reset();
+                    } else {
+                        let errText = 'Submission failed';
+                        try {
+                            const err = await res.json();
+                            if (err && err.errors && err.errors.length) errText = err.errors.map(e=>e.message).join(', ');
+                        } catch (e) {}
+                        showNotification(errText, 'error');
+                    }
+                }).catch((err) => {
+                    console.error('Formspree error:', err);
+                    showNotification('Submission error. Please try again later.', 'error');
+                });
+
+                return;
+            }
+
+            // If data-email is set, open user's mail client (mailto)
+            if (mailTo) {
+                const subject = encodeURIComponent('Message from portfolio site');
+                const body = encodeURIComponent(`Name: ${data.name}\nEmail: ${data.email}\n\n${data.message}`);
+                window.location.href = `mailto:${mailTo}?subject=${subject}&body=${body}`;
+                return;
+            }
+
+            // Fallback: local behavior (no server) — keep existing UX
+            console.log('Form submitted (local):', data);
             showNotification('Thank you for your message! I will get back to you soon.', 'success');
-
-            // Reset form
             this.reset();
         });
     }
@@ -884,30 +932,81 @@ function closeCertificateViewer() {
             btn.addEventListener('click', () => {
                 const targetTab = btn.getAttribute('data-tab');
                 
-                // Remove active from all buttons and contents
-                tabBtns.forEach(b => b.classList.remove('active'));
-                tabContents.forEach(content => content.classList.remove('active'));
-                
-                // Add active to clicked button and corresponding content
-                btn.classList.add('active');
-                document.querySelector(`.tab-content[data-tab="${targetTab}"]`)?.classList.add('active');
-                
-                // Reset certificates state jika certificates tab diklik
-                if (targetTab === 'certificates') {
-                    console.log('🔄 Certificates tab clicked - resetting state');
-                    displayedCerts = 6;
-                    allCertsLoaded = false;
-                    loadCertificates();
-                }
+                activatePortfolioTab(targetTab);
             });
         });
         
+        function activatePortfolioTab(tabName) {
+            // Remove active from all buttons and contents
+            tabBtns.forEach(b => b.classList.remove('active'));
+            tabContents.forEach(content => content.classList.remove('active'));
+            
+            // Add active to the correct button and content panel
+            const targetBtn = document.querySelector(`.tab-btn[data-tab="${tabName}"]`);
+            const targetContent = document.querySelector(`.tab-content[data-tab="${tabName}"]`);
+            targetBtn?.classList.add('active');
+            targetContent?.classList.add('active');
+            
+            if (tabName === 'certificates') {
+                console.log('🔄 Certificates tab activated - resetting state');
+                displayedCerts = 6;
+                allCertsLoaded = false;
+                loadCertificates();
+            }
+        }
+        
         // Set first tab as active by default
         if(tabBtns.length > 0) {
-            tabBtns[0].classList.add('active');
             const firstTab = tabBtns[0].getAttribute('data-tab');
-            document.querySelector(`.tab-content[data-tab="${firstTab}"]`)?.classList.add('active');
+            activatePortfolioTab(firstTab);
         }
+    })();
+
+    // Activate portfolio tab when Quick Stats pill is clicked
+    (function setupQuickStatsTabLinks(){
+        const statPills = document.querySelectorAll('.hero-stats .stat-pill[data-target-tab]');
+        statPills.forEach(pill => {
+            pill.addEventListener('click', (event) => {
+                const targetTab = pill.getAttribute('data-target-tab');
+                if (!targetTab) return;
+
+                const portfolioSection = document.querySelector('#portfolio');
+                if (portfolioSection) {
+                    const headerHeight = header?.offsetHeight || 80;
+                    window.scrollTo({ top: portfolioSection.offsetTop - headerHeight, behavior: 'smooth' });
+                }
+
+                const targetBtn = document.querySelector(`.tab-btn[data-tab="${targetTab}"]`);
+                if (targetBtn) {
+                    targetBtn.click();
+                }
+            });
+        });
+    })();
+
+    // Activate portfolio tab when stat cards in About section are clicked
+    (function setupAboutStatCardLinks(){
+        const statCards = document.querySelectorAll('.stats-wrapper .clickable-stat[data-target-tab]');
+        statCards.forEach(card => {
+            card.addEventListener('click', (event) => {
+                const targetTab = card.getAttribute('data-target-tab');
+                if (!targetTab) return;
+
+                const portfolioSection = document.querySelector('#portfolio');
+                if (portfolioSection) {
+                    const headerHeight = document.querySelector('header')?.offsetHeight || 80;
+                    window.scrollTo({ top: portfolioSection.offsetTop - headerHeight, behavior: 'smooth' });
+                }
+
+                // Delay tab activation slightly to ensure scroll has started
+                setTimeout(() => {
+                    const targetBtn = document.querySelector(`.tab-btn[data-tab="${targetTab}"]`);
+                    if (targetBtn) {
+                        targetBtn.click();
+                    }
+                }, 300);
+            });
+        });
     })();
 
     // Setup See More buttons for all tabs
@@ -1056,15 +1155,37 @@ function closeCertificateViewer() {
 
     // Small helpers for contact file upload & UI
     (function setupContactHelpers(){
+        const MAX_FILE_SIZE_MB = 5;
+        const MAX_FILE_SIZE_BYTES = MAX_FILE_SIZE_MB * 1024 * 1024;
+
         document.querySelectorAll('.choose-file-btn').forEach(btn => {
             const fileUpload = btn.closest('.file-upload');
             if(!fileUpload) return;
             const input = fileUpload.querySelector('input[type="file"]');
             const nameEl = fileUpload.querySelector('.file-name');
+            const updateDefaultText = () => {
+                if(nameEl) nameEl.textContent = t('max-file-size');
+            };
+
             btn.addEventListener('click', () => input && input.click());
             input && input.addEventListener('change', () => {
                 const f = input.files[0];
-                nameEl.textContent = f ? f.name : 'Max file size: 5MB';
+                if (!f) {
+                    updateDefaultText();
+                    return;
+                }
+
+                if (f.size > MAX_FILE_SIZE_BYTES) {
+                    if (nameEl) {
+                        nameEl.textContent = `${t('file-too-large')} (${MAX_FILE_SIZE_MB}MB)`;
+                    }
+                    input.value = '';
+                    return;
+                }
+
+                if (nameEl) {
+                    nameEl.textContent = f.name;
+                }
             });
         });
 
@@ -1084,7 +1205,7 @@ function closeCertificateViewer() {
                 b.textContent = 'Posted ✓';
                 setTimeout(()=>{
                     b.innerHTML = '<span>Post Comment</span>';
-                    name.value = ''; msg.value = ''; form.querySelector('input[type=file]').value = ''; form.querySelector('.file-name').textContent = 'Max file size: 5MB';
+                    name.value = ''; msg.value = ''; form.querySelector('input[type=file]').value = ''; form.querySelector('.file-name').textContent = t('max-file-size');
                 }, 900);
             });
         });
@@ -1280,9 +1401,25 @@ function closeCertificateViewer() {
         displayTestimonials();
     })();
 
+    // Setup Who Am I flip card interaction
+    function setupWhoAmICardFlip() {
+        const whoAmICard = document.getElementById('whoAmICard');
+        if (!whoAmICard) return;
+
+        whoAmICard.addEventListener('click', () => {
+            whoAmICard.classList.toggle('flipped');
+            const backFace = whoAmICard.querySelector('.flip-card-back');
+            if (backFace) {
+                const isFlipped = whoAmICard.classList.contains('flipped');
+                backFace.setAttribute('aria-hidden', isFlipped ? 'false' : 'true');
+            }
+        });
+    }
+
     // Initialize the application
 
     init();
+    setupWhoAmICardFlip();
 
     // Add CSS for ripple effect and notifications
     const style = document.createElement('style');
@@ -1485,14 +1622,64 @@ document.addEventListener('DOMContentLoaded', function() {
         localStorage.setItem(STORAGE_KEY, JSON.stringify(comments));
     }
 
-    // Fungsi untuk memperbarui counter comments
-    function updateCommentCount() {
-        const comments = getCommentsFromStorage();
-        // Hitung total comments (tidak termasuk pinned comment admin)
-        const totalComments = comments.length + 2; // +2 untuk 2 comments yang sudah ada
-        if (commentsCountSpan) {
-            commentsCountSpan.textContent = `(${totalComments})`;
+    // Fungsi untuk mengubah teks relatif menjadi timestamp
+    function parseRelativeTimeAgo(text) {
+        const normalized = text.trim().toLowerCase();
+        const now = Date.now();
+
+        if (normalized === 'just now') {
+            return now;
         }
+
+        const fullMatch = normalized.match(/^(\d+)\s*(minute|minutes|hour|hours|day|days|week|weeks|month|months)\s*ago$/);
+        if (fullMatch) {
+            const value = Number(fullMatch[1]);
+            switch (fullMatch[2]) {
+                case 'minute':
+                case 'minutes':
+                    return now - value * 60 * 1000;
+                case 'hour':
+                case 'hours':
+                    return now - value * 60 * 60 * 1000;
+                case 'day':
+                case 'days':
+                    return now - value * 24 * 60 * 60 * 1000;
+                case 'week':
+                case 'weeks':
+                    return now - value * 7 * 24 * 60 * 60 * 1000;
+                case 'month':
+                case 'months':
+                    return now - value * 30 * 24 * 60 * 60 * 1000;
+            }
+        }
+
+        const shortMatch = normalized.match(/^(\d+)\s*d\s*ago$/);
+        if (shortMatch) {
+            return now - Number(shortMatch[1]) * 24 * 60 * 60 * 1000;
+        }
+
+        return null;
+    }
+
+    // Fungsi untuk update timestamps pada semua comments
+    function updateCommentTimestamps() {
+        const commentItems = commentList.querySelectorAll('.comment-item:not(.comment-pinned)');
+        commentItems.forEach(item => {
+            let timestamp = item.getAttribute('data-timestamp');
+            const timeAgoElement = item.querySelector('.time-ago') || item.querySelector('.muted');
+
+            if (!timestamp && timeAgoElement) {
+                const parsed = parseRelativeTimeAgo(timeAgoElement.textContent || '');
+                if (parsed !== null) {
+                    timestamp = new Date(parsed).toISOString();
+                    item.setAttribute('data-timestamp', timestamp);
+                }
+            }
+
+            if (timestamp && timeAgoElement) {
+                timeAgoElement.textContent = formatTimeAgo(timestamp);
+            }
+        });
     }
 
     // Fungsi untuk render comments dari localStorage
@@ -1501,23 +1688,18 @@ document.addEventListener('DOMContentLoaded', function() {
         const pinnedComment = commentList.querySelector('.comment-pinned');
         
         // Hapus comments yang sebelumnya ditampilkan (kecuali pinned dan 2 original)
-        const existingComments = commentList.querySelectorAll('.comment-item:not(.comment-pinned)');
-        existingComments.forEach((comment, index) => {
-            // Hapus jika lebih dari 2 (karena ada 2 original comments)
-            if (index >= 2) {
-                comment.remove();
-            }
-        });
+        const existingStoredComments = commentList.querySelectorAll('.comment-item[data-stored]');
+        existingStoredComments.forEach(comment => comment.remove());
 
         // Tampilkan comments dari storage setelah pinned comment
         comments.forEach(comment => {
             const timeAgo = formatTimeAgo(comment.timestamp);
             const commentHTML = `
-                <div class="comment-item" role="listitem">
+                <div class="comment-item" role="listitem" data-stored="true" data-timestamp="${comment.timestamp}">
                     <div class="comment-avatar">${comment.avatar}</div>
                     <div class="comment-body">
                         <h5>${comment.name}</h5>
-                        <small class="muted">${timeAgo}</small>
+                        <small class="muted"><span class="time-ago">${timeAgo}</span></small>
                         <p>${comment.message}</p>
                     </div>
                 </div>
@@ -1529,11 +1711,14 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
 
+        // Update hardcoded comment timestamps
+        updateCommentTimestamps();
         updateCommentCount();
     }
 
     // Load comments saat halaman dimuat
     renderStoredComments();
+    updateCommentTimestamps();
 
     if (postCommentBtn && cmNameInput && cmMessageInput && commentList) {
         postCommentBtn.addEventListener('click', function(e) {
@@ -1566,11 +1751,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Buat elemen comment baru di DOM
             const newCommentHTML = `
-                <div class="comment-item" role="listitem">
+                <div class="comment-item" role="listitem" data-stored="true" data-timestamp="${newComment.timestamp}">
                     <div class="comment-avatar">${avatar}</div>
                     <div class="comment-body">
                         <h5>${name}</h5>
-                        <small class="muted">Just now</small>
+                        <small class="muted"><span class="time-ago">Just now</span></small>
                         <p>${message}</p>
                     </div>
                 </div>
@@ -1628,6 +1813,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Auto-refresh comment timestamps setiap menit
     setInterval(() => {
         renderStoredComments();
+        updateCommentTimestamps();
         updateCommentCount();
     }, 60000); // Refresh setiap 60 detik
 });
