@@ -2,7 +2,7 @@
 
 > *Transforming Raw Data into Actionable Business Insights*
 
-Welcome to my personal portfolio website! I'm a dedicated Data Analyst passionate about leveraging data-driven solutions to solve complex business problems. This repository showcases my skills, certifications, and projects in the field of data analytics and business intelligence.
+Welcome to my personal portfolio website! I'm a dedicated Business Development passionate about leveraging data-driven solutions to solve complex business problems. This repository showcases my skills, certifications, and projects in the field of Data-Driven Business and Business Development.
 
 <img width="1919" height="1047" alt="image" src="https://github.com/user-attachments/assets/501c8c6a-88aa-4531-8792-2344c2aabafd" />
 
@@ -11,34 +11,27 @@ Welcome to my personal portfolio website! I'm a dedicated Data Analyst passionat
 
 ## 🎯 About Me
 
-I am a results-oriented **Data Analyst** with expertise in:
+I am a results-oriented **Data-Driven Business & Business Development** with expertise in:
 - 📈 Data Analysis & Visualization
-- 🔍 Business Intelligence
-- 💾 Database Management
-- 📊 Statistical Analysis
-- 🛠️ ETL & Data Preparation
+- 🔍 Leads Business
+- 💾 Project Management
+- 📊 Customer Relationship Management 
+- 🛠️ 
 
-With a strong foundation in multiple analytics platforms and programming languages, I help organizations unlock the value hidden within their data.
+With a strong foundation in multiple Data-Driven Business & Business languages, I help organizations unlock the value hidden within their data solutions.
 
 ---
 
 ## 🏆 Key Certifications
 
-### Microsoft Ecosystem
-- ✅ **Microsoft Power BI Data Analyst** (PL-300)
-- ✅ **Microsoft Data Visualization Specialist**
-- ✅ **Microsoft Business Analyst**
-- ✅ **Microsoft SQL Server Certified**
-- ✅ **Azure Data Fundamentals** (DP-900)
+### Microsoft Coursera
+- ✅ **Google Advanced Data Analytics** 
+- ✅ **Microsoft Power BI Data Analyst**
+- ✅ **Microsoft SQL Server**
+- ✅ **Microsoft Data Visualization**
+- ✅ **Tableau Business Intelligence Analyst** 
 
-### Google Professional Certifications
-- ✅ **Google Advanced Data Analytics**
-- ✅ **Google Data Analytics**
 
-### Tableau & Other Platforms
-- ✅ **Tableau Business Intelligence Analyst**
-- ✅ **IBM Data Management & Analytics**
-- ✅ **PostgreSQL for Everybody**
 
 ---
 
@@ -46,12 +39,10 @@ With a strong foundation in multiple analytics platforms and programming languag
 
 | Category | Skills |
 |----------|--------|
-| **BI Tools** | Power BI, Tableau, Looker |
+| **Visualization** | Power BI, Tableau, Looker |
 | **Databases** | SQL Server, PostgreSQL, Excel |
-| **Programming** | Python, SQL, DAX |
-| **Data Processing** | ETL, Data Cleaning, Data Modeling |
-| **Analytics** | Statistical Analysis, Business Insights, Reporting |
-| **Visualization** | Dashboard Design, Interactive Reports |
+| **Project Management** | Trello, Notion |
+| **Customer relationship Management** | Hubspot, Salesforce |
 
 ---
 
@@ -82,20 +73,20 @@ This repository contains:
 
 - 🔗 **Portfolio Website**: [reynaldi.my.id](https://github.com/reynaldi8/reynaldi.my.id)
 - 💼 **LinkedIn**: [Reynaldi](https://linkedin.com)
-- 📧 **Email**: reynaldi8@gmail.com
+- 📧 **Email**: reynaldi.v8@gmail.com
 - 🐙 **GitHub**: [@reynaldi8](https://github.com/reynaldi8)
 
 ---
 
-## 📈 My Expertise Areas
+## 📈 My Expertise Areas (Tools I used)
 
-### Data Analysis
+### Data Analyctics
 - Exploratory Data Analysis (EDA)
 - Statistical Hypothesis Testing
 - Trend Analysis & Forecasting
 - Data Quality Assessment
 
-### Business Intelligence
+### Data Visualization 
 - KPI Development & Tracking
 - Dashboard Creation
 - Report Automation
@@ -107,6 +98,27 @@ This repository contains:
 - Data Integration (ETL/ELT)
 - Performance Tuning
 
+### Project Management
+- Jira
+- Trello
+-
+### CRM (Customer Relationship Management)
+- Hubspot
+- Salesforce
+- Mekari Qontak 
+- Zoho CRM
+
+### Alur Business
+- Ideal Customer Profile (ICP)
+- Lead Generation/Prospecting
+- Linkedin Boolean Search/Google Operator Search/Google Maps/AI Generation
+- Validasi kontak prospek 
+- Sales pipeline
+- Cold Outreach
+- Database B2B
+- Discovery call
+- Consultative selling
+- Sourcing peluang B2B
 ---
 
 ## 🎓 Learning Philosophy
@@ -135,5 +147,5 @@ This project is licensed under the MIT License - see the [LISENSI.txt](./LISENSI
 
 ---
 
-*Last Updated: January 2026*
+*Last Updated: October 2026*
 *Built with ❤️ for data enthusiasts*

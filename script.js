@@ -155,7 +155,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // ==================== CERTIFICATES DATA (20 Total) ====================
         const certificateData = [
             // ==================== Certificates ====================
-            // Data Analytics (5)
+            // Data Analytics Coursera (5)
             { id: 1, name: 'Google Advanced Data Analytics', org: 'Google', date: '2024', path: 'public/Achievments/Google Advanced Data Analytics/Google-Advanced-Data-Analytics.jpg' },
             { id: 2, name: 'Microsoft Power BI Data Analyst', org: 'Microsoft', date: '2023', path: 'public/Achievments/Microsoft Data Visualization/Microsoft-Power-BI-Data-Analyst.jpg' },
             { id: 3, name: 'Microsoft SQL Server', org: 'Microsoft', date: '2022', path: 'public/Achievments/Microsoft SQL Server/Microsoft-SQL-Server.jpg' },
@@ -173,14 +173,13 @@ document.addEventListener('DOMContentLoaded', function() {
             { id: 11, name: 'HackerRank', org: 'HackerRank', date: '2026', path: 'public/Achievments/HackerRank/sql-basic.jpg' },
             { id: 12, name: 'HackerRank', org: 'HackerRank', date: '2026', path: 'public/Achievments/HackerRank/sql-intermediate.jpg' },
             { id: 13, name: 'HackerRank', org: 'HackerRank', date: '2026', path: 'public/Achievments/HackerRank/sql-advanced.jpg' },
-            { id: 14, name: 'HackerRank', org: 'HackerRank', date: '2026', path: 'public/Achievments/HackerRank/css-basic.jpg' },
+            // CodeAcademy (1)
+            { id: 10, name: 'CodeAcademy', org: 'CodeAcademy', date: '2026', path: 'public/Achievments/CodeAcademy/Analyst-Data-Codecademy.jpg' },
             // Business Analytics (1)
-            { id: 15, name: 'Introduction to Data Analytics for Business', org: 'Coursera', date: '2024', path: 'public/Achievments/Advanced Business Analytics/Introduction-to-Data-Analytics-for-Business.jpg' },
             { id: 16, name: 'Excel Basics for Data Analysis', org: 'IBM', date: '2023', path: 'public/Achievments/IBM/Excel-Basics-for-Data-Analysis.jpg' },
-    
-            { id: 17, name: 'Data for Business Analysts Using Microsoft Excel', org: 'Microsoft', date: '2022', path: 'public/Achievments/Microsoft Business Analyst/Data-for-Business-Analysts-Using-Microsoft-Excel.jpg' },
             // PostgreSQL for Everybody (1)
             { id: 18, name: 'Database Design and Basic SQL in PostgreSQL', org: 'Coursera', date: '2022', path: 'public/Achievments/PostgreSQL for Everybody/Database-Design-and-Basic-SQL-in-PostgreSQL.jpg' },
+        
         ];
 
         let displayedCerts = 6;
@@ -400,8 +399,7 @@ function loadCertificates() {
     // Professions for typewriter effect
     let professions = [
         'Data Analyst',
-        'Business Development Associate',
-        'Data-Driven Business',
+        'Business Development',
     ];
     let typewriterTimeout;
 
@@ -410,7 +408,7 @@ function loadCertificates() {
         if (Array.isArray(professionList) && professionList.length > 0) {
             return professionList;
         }
-        return ['Data Analyst', 'Business Development Associate', 'Data-Driven Business'];
+        return ['Data Analyst', 'Business Development'];
     }
 
     // Typewriter Effect for Profession Cycling
@@ -1228,8 +1226,42 @@ function loadCertificates() {
             return localStorage.getItem('admin_mode') === 'true';
         };
 
-        // Load testimonials from localStorage
-        let testimonials = JSON.parse(localStorage.getItem('testimonials')) || [];
+        const defaultTestimonials = [
+            {
+                name: 'Clarissa W.',
+                role: 'Marketing Intern',
+                message: 'Easy to work with and very responsive. Reynaldi helped translate data into insights that were easy to understand, even for non-technical team members.',
+                rating: 5,
+                date: new Date().toISOString()
+            }
+        ];
+
+        let testimonials = [];
+
+        async function loadTestimonials() {
+            const endpoint = form.dataset.testimonialsEndpoint && form.dataset.testimonialsEndpoint.trim();
+            if (endpoint && endpoint !== 'YOUR_APPS_SCRIPT_WEB_APP_URL_HERE') {
+                try {
+                    const response = await fetch(endpoint, {
+                        method: 'GET',
+                        headers: { 'Accept': 'application/json' }
+                    });
+                    if (response.ok) {
+                        const data = await response.json();
+                        if (Array.isArray(data)) {
+                            testimonials = data;
+                            displayTestimonials();
+                            return;
+                        }
+                    }
+                } catch (err) {
+                    console.warn('Could not load testimonials from shared endpoint:', err);
+                }
+            }
+
+            testimonials = JSON.parse(localStorage.getItem('testimonials')) || defaultTestimonials.slice();
+            displayTestimonials();
+        }
 
         // Display testimonials
         function displayTestimonials() {
@@ -1238,7 +1270,7 @@ function loadCertificates() {
                 testimonialEmpty.style.display = 'block';
             } else {
                 testimonialEmpty.style.display = 'none';
-                testimonialsList.style.display = 'grid';
+                testimonialsList.style.display = 'flex';
                 testimonialsList.innerHTML = '';
 
                 testimonials.forEach((testimonial, index) => {
@@ -1332,7 +1364,7 @@ function loadCertificates() {
         }
 
         // Handle form submission
-        form.addEventListener('submit', (e) => {
+        form.addEventListener('submit', async (e) => {
             e.preventDefault();
 
             const name = document.getElementById('t-name').value.trim();
@@ -1357,16 +1389,70 @@ function loadCertificates() {
 
             testimonials.unshift(newTestimonial);
             localStorage.setItem('testimonials', JSON.stringify(testimonials));
-
             displayTestimonials();
+
+            const endpoint = form.dataset.formspree && form.dataset.formspree.trim();
+            const mailTo = form.dataset.email && form.dataset.email.trim();
+
+            if (endpoint) {
+                const formData = new FormData(form);
+                formData.set('name', name);
+                formData.set('email', email);
+                formData.set('role', role || 'Client');
+                formData.set('message', message);
+                formData.set('rating', String(rating));
+                formData.set('submitted_at', new Date().toISOString());
+
+                try {
+                    const res = await fetch(endpoint, {
+                        method: 'POST',
+                        body: formData,
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    });
+
+                    if (res.ok) {
+                        form.reset();
+                        ratingInput.value = 5;
+                        updateStars(5);
+                        closeModal();
+                        showNotification('Thank you! Your testimonial has been sent and will be reviewed.', 'success');
+                        return;
+                    }
+
+                    let errText = 'Submission failed';
+                    try {
+                        const err = await res.json();
+                        if (err && err.errors && err.errors.length) errText = err.errors.map(e => e.message).join(', ');
+                    } catch (e) {}
+                    showNotification(errText, 'error');
+                } catch (err) {
+                    console.error('Testimonial submission error:', err);
+                    showNotification('Submission error. Please try again later.', 'error');
+                }
+            }
+
+            if (mailTo) {
+                const subject = encodeURIComponent('New testimonial from portfolio site');
+                const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nRole: ${role || 'Client'}\nRating: ${rating}/5\n\n${message}`);
+                window.location.href = `mailto:${mailTo}?subject=${subject}&body=${body}`;
+            }
+
+            form.reset();
+            ratingInput.value = 5;
+            updateStars(5);
             closeModal();
-            showNotification('Thank you! Your testimonial has been added successfully.', 'success');
+            showNotification('Thank you! Your testimonial has been saved locally and will be reviewed.', 'success');
         });
 
         // Event listeners
         addBtn?.addEventListener('click', openModal);
         cancelBtn?.addEventListener('click', closeModal);
         modalClose?.addEventListener('click', closeModal);
+
+        // Initialize local testimonials
+        loadTestimonials();
 
         // Star rating click handlers
         stars.forEach(star => {

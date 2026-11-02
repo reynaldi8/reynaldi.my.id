@@ -3,70 +3,134 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>CekTugas — Project Detail</title>
+    <meta name="description" content="Studi kasus penjualan personal di Dashboard Marketplace: strategi listing, penetapan harga, komunikasi pembeli, negosiasi, dan hasil." />
+    <title>Dashboard Marketplace Sales | Reyn</title>
     <link rel="stylesheet" href="project-detail.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   </head>
   <body>
     <main class="page">
-      <nav class="crumbs">
-        <a class="back" href="#" onclick="history.back(); return false;">&larr; Back</a>
-        <span class="sep">›</span>
-        <span class="crumb">Projects</span>
-        <span class="sep">›</span>
-        <span class="crumb current">CekTugas</span>
+      <nav class="crumbs" aria-label="Breadcrumb">
+        <a class="back" href="index.html#portfolio">&larr; Kembali</a>
+        <span class="sep" aria-hidden="true">›</span>
+        <a class="crumb" href="index.html#portfolio">Proyek</a>
+        <span class="sep" aria-hidden="true">›</span>
+        <span class="crumb current" aria-current="page"> Dashboard Marketplace Sales</span>
       </nav>
 
-      <section class="hero">
+      <section class="hero" aria-labelledby="project-title">
         <div class="hero-left">
-          <h1 class="title">CekTugas</h1>
-          <p class="subtitle">Platform manajemen dan pusat koordinasi tugas kelas yang terintegrasi, interaktif, dan real-time. CekTugas membantu siswa/mahasiswa mengelola tugas dalam satu dashboard terpusat, memantau deadline, melacak progres pengerjaan, serta berdiskusi langsung pada setiap tugas agar koordinasi kelas menjadi lebih terstruktur dan efisien.</p>
+          <p class="eyebrow">Studi kasus · Penjualan independen</p>
+          <h1 class="title" id="project-title">Dashboard Marketplace Personal Sales</h1>
+          <p class="subtitle">Studi kasus penjualan lebih dari 12 barang personal melalui Dashboard Marketplace. Saya mengelola proses dari persiapan listing hingga transaksi selesai, dengan pendekatan yang disesuaikan untuk setiap barang.</p>
 
           <div class="actions">
-            <a class="btn btn-primary" href="#">Live Demo</a>
-            <a class="btn btn-ghost" href="#">Github</a>
+            <a class="btn btn-primary" href="#case-study">Lihat studi kasus <span aria-hidden="true">↓</span></a>
+            <a class="btn btn-ghost" href="index.html#portfolio">Kembali ke proyek</a>
           </div>
 
-          <div class="meta">
-            <div class="meta-item">
-              <div class="meta-num">4</div>
-              <div class="meta-label">Total Teknologi</div>
-            </div>
-            <div class="meta-item">
-              <div class="meta-num">7</div>
-              <div class="meta-label">Fitur Utama</div>
-            </div>
-          </div>
-
-          <div class="tech-row">
-            <h4 class="tech-heading">Tools Used</h4>
-            <ul class="tech-list">
-              <li>SQL</li>
-              <li>Google Sheet</li>
-              <li>Tableau</li>
-            </ul>
+          <div class="meta" aria-label="Ringkasan proyek">
+            <div class="meta-item"><div class="meta-num">10+</div><div class="meta-label">Barang terjual</div></div>
+            <div class="meta-item"><div class="meta-num">1 unit</div><div class="meta-label">Stok per barang</div></div>
+            <div class="meta-item"><div class="meta-num">End-to-end</div><div class="meta-label">Proses dikelola</div></div>
           </div>
         </div>
 
-        <aside class="hero-right">
-          <div class="showcase">
-            <img src="./public/It's Me.png" alt="CekTugas screenshot">
-          </div>
-
-          <div class="card">
-            <h3 class="card-title">Key Features</h3>
-            <ul class="features">
-              <li>Multi Auth</li>
-              <li>Class Access Control</li>
-              <li>Task Dashboard</li>
-              <li>Deadline Calendar</li>
-              <li>Real-time Discussion</li>
-              <li>Progress Tracking</li>
-              <li>PWA</li>
-            </ul>
-          </div>
+        <aside class="profile-card" aria-labelledby="profile-title">
+          <p class="eyebrow">Profil singkat</p>
+          <h2 id="profile-title">Perspektif bisnis, eksekusi yang terstruktur.</h2>
+          <p>Lulusan Manajemen Bisnis dengan fokus pada Business Development dan Data-Driven Business. Saya memadukan analisis data dan perspektif strategi untuk mendukung keputusan komersial.</p>
+          <div class="profile-divider"></div>
+          <h3>Nilai jual</h3>
+          <ul class="value-list">
+            <li>Memahami kebutuhan dan pertanyaan calon pembeli</li>
+            <li>Mengelola komunikasi dan negosiasi secara langsung</li>
+            <li>Menjalankan proses penjualan dari awal hingga transaksi</li>
+          </ul>
+          <p class="role-label">Peran dalam proyek</p>
+          <span class="role-chip">Independent Seller · End-to-end</span>
         </aside>
       </section>
+
+      <section class="case-study" id="case-study" aria-label="Studi kasus proyek">
+        <header class="section-heading">
+          <p class="eyebrow">Studi kasus proyek</p>
+          <h2>Dari listing hingga transaksi selesai</h2>
+          <p>Setiap barang memiliki kondisi, spesifikasi, dan calon pembeli yang berbeda. Prosesnya perlu jelas, relevan, dan cukup fleksibel untuk menangani tiap penjualan satu per satu.</p>
+        </header>
+
+        <div class="case-grid">
+          <article class="case-card problem-card">
+            <span class="section-number">01 / Tantangan</span>
+            <h3>Bagaimana menjual stok unik satuan?</h3>
+            <p>Barang yang dijual beragam dan hanya tersedia satu unit per jenis. Tantangannya adalah menyampaikan kondisi barang dengan jelas, menetapkan harga yang sesuai, merespons pertanyaan, dan menjaga komunikasi sampai transaksi tuntas.</p>
+            <div class="tag-row">
+              <span>Inventaris satuan</span>
+              <span>Kategori beragam</span>
+              <span>Penjualan langsung</span>
+            </div>
+          </article>
+
+          <article class="case-card framework-card">
+            <span class="section-number">02 / Kerangka kerja</span>
+            <h3>Alur penjualan end-to-end</h3>
+            <p>Kerangka sederhana yang digunakan: mengubah barang siap jual menjadi listing yang informatif, lalu mengelola interaksi hingga transaksi.</p>
+            <ol class="workflow" aria-label="Alur penjualan">
+              <li><span class="workflow-index">01</span><span><strong>Siapkan</strong><small>Foto, kondisi, spesifikasi</small></span></li>
+              <li><span class="workflow-index">02</span><span><strong>Publikasikan</strong><small>Deskripsi dan harga per barang</small></span></li>
+              <li><span class="workflow-index">03</span><span><strong>Tangani minat</strong><small>Respons dan negosiasi</small></span></li>
+              <li><span class="workflow-index">04</span><span><strong>Selesaikan</strong><small>Koordinasi hingga transaksi</small></span></li>
+            </ol>
+          </article>
+
+          <article class="case-card execution-card">
+            <span class="section-number">03 / Eksekusi & solusi</span>
+            <h3>Informasi yang relevan, komunikasi yang responsif</h3>
+            <ul class="detail-list">
+              <li><strong>Mempersiapkan listing:</strong> mendokumentasikan barang, kondisi, dan detail produk.</li>
+              <li><strong>Menentukan harga:</strong> menetapkan harga per barang dengan mempertimbangkan kondisi dan membuka ruang negosiasi yang wajar.</li>
+              <li><strong>Mengelola komunikasi:</strong> menjawab pertanyaan calon pembeli dan menindaklanjuti minat.</li>
+              <li><strong>Mengawal transaksi:</strong> mengoordinasikan proses sampai penjualan selesai.</li>
+            </ul>
+          </article>
+
+          <article class="case-card impact-card">
+            <span class="section-number">04 / Hasil & dampak</span>
+            <h3>Hasil yang dapat ditunjukkan</h3>
+            <div class="impact-stat"><strong>10+</strong><span>barang personal terjual melalui proses yang dikelola end-to-end</span></div>
+            <p>Contoh harga dari penjualan yang terdokumentasi:</p>
+            <div class="price-examples">
+              <div><span>Laptop HP AMD A12</span><strong>Rp2.299.989</strong></div>
+              <div><span>Xiaomi Redmi Pad SE</span><strong>Rp1.599.000</strong></div>
+            </div>
+            <p class="disclaimer">Harga di atas adalah contoh transaksi yang tercatat, bukan total pendapatan proyek.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="artifacts" aria-labelledby="artifacts-title">
+        <div class="artifact-copy">
+          <p class="eyebrow">Artefak kerja</p>
+          <h2 id="artifacts-title">Lihat proyek secara langsung</h2>
+          <p>Demo proyek menampilkan dokumentasi listing dan contoh barang yang ditangani. Alur kerja di atas merangkum proses penjualan yang digunakan.</p>
+          <a class="btn btn-primary" href="https://reynaldi8.github.io/Project-Marketplace-Sales/" target="_blank" rel="noopener noreferrer">Buka live demo <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="artifact-flow" aria-hidden="true">
+          <span>Listing</span><i>→</i><span>Inquiry</span><i>→</i><span>Negotiation</span><i>→</i><span>Sale</span>
+        </div>
+      </section>
+
+      <footer class="contact-card">
+        <div>
+          <p class="eyebrow">Kontak & tautan</p>
+          <h2>Terbuka untuk berdiskusi dan berkolaborasi.</h2>
+        </div>
+        <div class="contact-links">
+          <a href="https://www.linkedin.com/in/reynaldii" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
+          <a href="mailto:reynaldi.v8@gmail.com">Email <span aria-hidden="true">↗</span></a>
+          <a href="index.html#contact">Hubungi saya <span aria-hidden="true">↗</span></a>
+        </div>
+      </footer>
     </main>
   </body>
 </html>

@@ -962,6 +962,7 @@ header.scrolled {
     align-items: center;
     gap: 1rem;
     margin: 0 0 1.25rem 0;
+    padding-bottom: 1.5rem;
     opacity: 0;
     animation: fadeInUp 0.8s ease forwards 0.8s;
     flex-wrap: wrap;
@@ -1256,6 +1257,39 @@ header.scrolled {
 .social-icon:hover {
     transform: translateY(-4px) scale(1.15);
     box-shadow: 0 15px 40px rgba(31, 64, 175, 0.3);
+}
+
+.social-icon[data-tooltip] {
+    position: relative;
+}
+
+.social-icon[data-tooltip]::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 50%;
+    z-index: 5;
+    padding: 0.4rem 0.65rem;
+    border: 1px solid var(--border-color);
+    border-radius: 0.4rem;
+    background: #111827;
+    color: #ffffff;
+    font-size: 0.75rem;
+    font-weight: 500;
+    line-height: 1.2;
+    white-space: nowrap;
+    pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+    transform: translate(-50%, -4px);
+    transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s ease;
+}
+
+.social-icon[data-tooltip]:hover::after,
+.social-icon[data-tooltip]:focus-visible::after {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, 0);
 }
 
 .social-icon.whatsapp:hover {
@@ -2366,25 +2400,6 @@ header.scrolled {
     }
 }
 
-/* Global responsive behavior */
-html, body {
-    overflow-x: hidden;
-}
-
-body {
-    width: 100%;
-}
-
-img, video {
-    max-width: 100%;
-    height: auto;
-    display: block;
-}
-
-*, *::before, *::after {
-    box-sizing: border-box;
-}
-
 /* Responsive Design */
 @media (max-width: 1200px) {
     .container {
@@ -2544,58 +2559,6 @@ img, video {
     
     .highlight:hover {
         transform: none;
-    }
-}
-
-@media (max-width: 640px) {
-    .navbar {
-        padding: 0 0.75rem;
-        min-height: 70px;
-    }
-
-    .nav-brand {
-        font-size: 1.15rem;
-    }
-
-    .nav-controls {
-        margin-left: auto;
-    }
-
-    .greeting {
-        font-size: 1.8rem;
-        line-height: 1.1;
-    }
-
-    .hero-subtitle {
-        font-size: 1.3rem;
-    }
-
-    .hero-desc {
-        font-size: 0.95rem;
-    }
-
-    .hero-actions {
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    .hire-btn {
-        width: 100%;
-        justify-content: center;
-    }
-
-    .social-section {
-        align-items: center;
-    }
-
-    .social-links {
-        justify-content: center;
-    }
-
-    .profile-image,
-    .image-container {
-        width: min(85vw, 320px);
-        height: auto;
     }
 }
 
@@ -5000,6 +4963,21 @@ img, video {
     transform: scale(1.1);
 }
 
+.featured-project .project-image {
+    height: auto;
+    min-height: 0;
+}
+
+.featured-project .project-image img {
+    display: block;
+    height: auto;
+    object-fit: contain;
+}
+
+.featured-project:hover .project-image img {
+    transform: none;
+}
+
 .project-overlay {
     position: absolute;
     top: 0;
@@ -5523,12 +5501,25 @@ img, video {
 }
 
 .testimonials-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 2rem;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 1.5rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    padding-bottom: 1rem;
+    touch-action: pan-x;
+}
+
+.testimonials-list::-webkit-scrollbar {
+    display: none;
 }
 
 .testimonial-card {
+    min-width: 100%;
+    max-width: 100%;
+    scroll-snap-align: center;
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid rgba(31, 64, 175, 0.12);
     border-radius: var(--border-radius);

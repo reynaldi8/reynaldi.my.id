@@ -12,7 +12,7 @@ const translations = {
         // Hero section
         'greeting': "Hi, I'm",
         'accent-name': 'Reynaldi',
-        'professions': ['Data Analyst Junior', 'Business Development Associate', 'Data-Driven Business'],
+        'professions': ['Data Analyst', 'Business Development'],
         'hero-desc': 'Transforming data into valuable insights for better business decisions. Interested in Data-Driven Business and Business Development.',
         'social-label': 'Follow me on:',
         'explore-projects': 'Explore My Project',
@@ -68,7 +68,7 @@ const translations = {
         'about-title': 'About Me',
         'about-subtitle': 'Discover my journey, expertise, and the passion that drives my work in Data-Driven Business.',
         'who-am-i': 'Who Am I?',
-        'who-am-i-desc': "<span class='highlight-primary'>Fresh graduate turned Data-Driven Business</span>. While studying <span class='highlight-accent'>Business Management in President University</span>, I discovered something powerful: <span class='highlight-accent'>data bridges business problems and smart solutions</span>. I taught myself <span class='highlight-primary'>SQL, Looker Studio, Power BI, Tableau, and Excel</span> because I knew this was my path. My business degree isn't a setback—it's my superpower. I speak both languages: <span class='highlight-accent'>business strategy</span> and <span class='highlight-accent'>technical insight</span>. I understand how companies operate, which metrics drive decisions, and how to deliver analysis that actually matters. Ready to turn your data into <span class='highlight-primary'>impact</span>.",
+        'who-am-i-desc': "<span class='highlight-primary'>turned Data-Driven Business Insights</span>. I am a Data-Driven Business enthusiast with a background in <span class='highlight-accent'>Business Management</span>, passionate about turning data into <span class='highlight-accent'>actionable insights and business growth opportunities</span>. My Skills <span class='highlight-primary'>Hubspot, SQL, Looker Studio, Power BI, and Excel</span> because i often used this tools since i study. My business degree isn't a setback—it's my superpower. I speak both languages: <span class='highlight-accent'>business strategy</span> and <span class='highlight-accent'>technical insight</span>. I understand how companies operate, which metrics drive decisions, and how to deliver analysis that actually matters. Ready to turn your data into <span class='highlight-primary'>impact</span>.",
         'tools-mastered': 'TOOLS MASTERED',
         'portfolio-projects': 'PORTFOLIO PROJECTS',
         'current-focus': 'Current Focus',
