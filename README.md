@@ -143,7 +143,7 @@ Interested in collaborating or discussing data analytics projects? Feel free to 
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the [LISENSI.txt](./LISENSI.txt) file for details.
+© 2026 Reynaldi. The original portfolio content, project write-ups, design, and code in this repository are not licensed for reuse. Please ask for written permission before copying or adapting them. Third-party assets remain subject to their respective licenses.
 
 ---
 
