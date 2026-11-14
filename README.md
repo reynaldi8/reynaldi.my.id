@@ -4,7 +4,7 @@
 
 Welcome to my personal portfolio website! I'm a dedicated Business Development passionate about leveraging data-driven solutions to solve complex business problems. This repository showcases my skills, certifications, and projects in the field of Data-Driven Business and Business Development.
 
-<img width="1919" height="1047" alt="image" src="https://github.com/user-attachments/assets/501c8c6a-88aa-4531-8792-2344c2aabafd" />
+<img />
 
 
 ---
